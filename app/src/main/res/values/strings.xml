@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="PrivateResource">MapboxNavigation</string>
+    <string name="acces_token">pk.eyJ1IjoiamVzdXNkZXYiLCJhIjoiY2pzMDRoNzJpMThkeTQzb2NudTE4MDQ0OCJ9.wnHtztuA-HvbSSmSU7gGmQ</string>
+</resources>
