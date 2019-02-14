@@ -2,7 +2,7 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<!--
+
     <item
         android:id="@+id/traffic"
         android:title="Traffic"
@@ -25,5 +25,5 @@
         android:id="@+id/walking"
         android:title="Walking"
         android:icon="@drawable/ic_directions_walk_black_24dp"
-        app:showAsAction="always"/> -->
+        app:showAsAction="always"/>
 </menu>

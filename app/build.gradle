@@ -6,6 +6,10 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         applicationId "com.jeluchu.mapboxnavigation"
         minSdkVersion 15
@@ -43,15 +47,14 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     // MAPBOX DEPENDENCIES
-    implementation('com.mapbox.mapboxsdk:mapbox-android-sdk:7.1.1') {
-        exclude group: 'group_name', module: 'module_name'
-    }
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.3'
-    implementation ('com.mapbox.mapboxsdk:mapbox-android-navigation:0.28.0') {
-        transitive = true
-    }
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.28.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.1.2'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.8.2'
+
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places-v7:0.7.0'
+
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.28.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.28.0'
+
 
     // RETROFIT
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'

@@ -40,11 +40,13 @@
 
    <Button
             android:id="@+id/btnOfflineList"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_above="@+id/btnStartNavigation"
             android:layout_alignEnd="@+id/btnStartNavigation"
-            android:text="@string/offline_map" />
+            android:text="@string/offline_map"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"/>
 
     <Button
             android:id="@+id/btnStartNavigation"
@@ -66,8 +68,11 @@
             android:layout_height="25dp"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_alignParentLeft="true"/>
 
 </RelativeLayout>
