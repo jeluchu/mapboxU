@@ -4,26 +4,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/traffic"
-        android:title="Traffic"
-        android:icon="@drawable/ic_traffic_white_24dp"
-        app:showAsAction="always"/>
-
-    <item
         android:id="@+id/car"
         android:title="Car"
-        android:icon="@drawable/ic_directions_car_black_24dp"
+        android:icon="@drawable/ic_car"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/motorcycle"
         android:title="Motorcycle"
-        android:icon="@drawable/ic_motorcycle_black_24dp"
+        android:icon="@drawable/ic_motorcycle"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/walking"
         android:title="Walking"
-        android:icon="@drawable/ic_directions_walk_black_24dp"
+        android:icon="@drawable/ic_walk"
         app:showAsAction="always"/>
 </menu>

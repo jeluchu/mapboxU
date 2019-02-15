@@ -1,8 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="PrivateResource">MapboxNavigation</string>
+<resources>
+    <string name="app_name">MapboxU</string>
     <string name="acces_token">pk.eyJ1IjoiamVzdXNkZXYiLCJhIjoiY2pzMDRoNzJpMThkeTQzb2NudTE4MDQ0OCJ9.wnHtztuA-HvbSSmSU7gGmQ</string>
-
-    <string name="start_navigation">Iniciar Navegación</string>
-    <string name="find_places">Buscar Lugares</string>
-    <string name="offline_map">Sin conexión</string>
+    <string name="navegar">Navegar</string>
+    <string name="buscar">Buscar</string>
+    <string name="offline">Guardar</string>
+    <string name="listado">Listado</string>
 </resources>

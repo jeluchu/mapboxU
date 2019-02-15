@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/startNavigation"
+            android:title="@string/navegar"
+            android:icon="@drawable/ic_brujula"
+            app:showAsAction="ifRoom"/>
+
+    <item
+            android:id="@+id/searchPlace"
+            android:title="@string/buscar"
+            android:icon="@drawable/ic_search"
+            app:showAsAction="ifRoom"/>
+
+    <item
+            android:id="@+id/downloadMap"
+            android:title="@string/offline"
+            android:icon="@drawable/ic_offline"
+            app:showAsAction="always"/>
+
+    <item
+            android:id="@+id/listPlace"
+            android:title="@string/listado"
+            android:icon="@drawable/ic_places"
+            app:showAsAction="always"/>
+
+</menu>
