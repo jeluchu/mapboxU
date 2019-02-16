@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Gravity
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -26,11 +25,9 @@ import com.mapbox.android.core.location.LocationEnginePriority
 import com.mapbox.android.core.location.LocationEngineProvider
 import com.mapbox.android.core.permissions.PermissionsListener
 import com.mapbox.android.core.permissions.PermissionsManager
+import com.mapbox.api.directions.v5.DirectionsCriteria
 import com.mapbox.api.directions.v5.models.DirectionsResponse
 import com.mapbox.api.directions.v5.models.DirectionsRoute
-import com.mapbox.api.geocoding.v5.GeocodingCriteria
-import com.mapbox.api.geocoding.v5.MapboxGeocoding
-import com.mapbox.api.geocoding.v5.models.GeocodingResponse
 import com.mapbox.geojson.Point
 import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.annotations.MarkerOptions
@@ -44,18 +41,25 @@ import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
 import com.mapbox.mapboxsdk.offline.*
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
+import com.mapbox.mapboxsdk.style.layers.FillLayer
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity
+import com.mapbox.mapboxsdk.style.sources.GeoJsonSource
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions
 import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import timber.log.Timber
+import java.net.MalformedURLException
+import java.net.URL
 import java.nio.charset.Charset
-import java.util.ArrayList
+import java.util.*
 
 class MainActivity : AppCompatActivity(),
     PermissionsListener, LocationEngineListener, OnMapReadyCallback, MapboxMap.OnMapClickListener,
@@ -78,7 +82,7 @@ class MainActivity : AppCompatActivity(),
     var navigationMapRoute: NavigationMapRoute? = null
     var currentRoute: DirectionsRoute? = null
 
-    private var transport = "driving-traffic"
+    private var transport = "driving"
     private lateinit var menuView: Menu
 
     // Offline Map
@@ -95,6 +99,45 @@ class MainActivity : AppCompatActivity(),
         Mapbox.getInstance(this, getString(R.string.acces_token))
         setContentView(R.layout.activity_main)
 
+        // TOOLBAR SUPPORT
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = "MapboxU"
+
+        // TOOLBAR OPTIONS
+        toolbar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                    R.id.car -> {
+                        transport = "driving"
+                        item.setIcon(R.drawable.ic_car)
+                        if (originLocation != null && currentRoute != null)
+                            getRoute(originPoint!!, endPoint!!) // ERROR!
+                        else
+                            return@setOnMenuItemClickListener false
+                        return@setOnMenuItemClickListener true
+                    }
+
+                    R.id.motorcycle -> {
+                        transport = "cycling"
+                        item.setIcon(R.drawable.ic_motorcycle)
+                        return@setOnMenuItemClickListener true
+                    }
+
+                    R.id.walking -> {
+                        transport = "walking"
+                        item.setIcon(R.drawable.ic_walk)
+                        return@setOnMenuItemClickListener true
+                    }
+
+                    R.id.info -> {
+                        val info = Intent(this@MainActivity, InfoActivity::class.java)
+                        startActivity(info)
+                        return@setOnMenuItemClickListener true
+
+                    }
+            }
+            false
+        }
+
         mapbox.onCreate(savedInstanceState)
         mapbox.getMapAsync(this)
         settingsClient = LocationServices.getSettingsClient(this)
@@ -104,12 +147,32 @@ class MainActivity : AppCompatActivity(),
             it.locationComponent.isLocationComponentEnabled = true
             it.uiSettings.isAttributionEnabled = false
             it .uiSettings.isLogoEnabled = false
+
+            // TRY TO LOAD LAYER FOR LIMITS
+            try{
+                val geoJsonUrl = URL("https://macarteycreacion.com/jeluchu/geojsons/mapi.geojson")
+                val urbanAreasSource = GeoJsonSource("urban-areas", geoJsonUrl)
+                map.addSource(urbanAreasSource)
+
+                val urbanArea = FillLayer("urban-areas-fill", "urban-areas")
+
+                urbanArea.setProperties(
+                    fillColor(Color.parseColor("#8ee614")),
+                    fillOpacity(0.36f)
+                )
+
+                map.addLayerBelow(urbanArea, "cameras")
+            } catch (malformedUrlException: MalformedURLException) {
+                malformedUrlException.printStackTrace()
+            }
         }
 
-        // FABBUTTON SETTINGS
+        // FAB MENU OPTIONS
+        btnExtend!!.bindAnchorView(btnNavigate!!)
+        btnExtend!!.setOnFABMenuSelectedListener(this)
+
+        // FABBUTTON OPENING
         btnNavigate.setOnClickListener {
-            btnExtend!!.bindAnchorView(btnNavigate!!)
-            btnExtend!!.setOnFABMenuSelectedListener(this)
             btnExtend!!.menuDirection = Direction.LEFT
         }
 
@@ -397,12 +460,14 @@ class MainActivity : AppCompatActivity(),
     }
 
 
+    /* -------------------------------- TRANSPORT OPTION ------------------------------------------- */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_transportation, menu!!)
         menuView = menu
         return true
     }
 
+    /*
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         menuView.findItem(R.id.car).setIcon(R.drawable.ic_car_active)
         menuView.findItem(R.id.motorcycle).setIcon(R.drawable.ic_motorcycle_active)
@@ -423,12 +488,18 @@ class MainActivity : AppCompatActivity(),
                 transport = "walking"
                 item.setIcon(R.drawable.ic_walk)
             }
+
+            R.id.info -> {
+                val info = Intent(this@MainActivity, InfoActivity::class.java)
+                startActivity(info)
+
+            }
         }
 
         if (originPoint != null && endPoint != null)
             getRoute(originPoint!!, endPoint!!)
         return true
-    }
+    } */
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -443,6 +514,8 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
+
+    /* -------------------------------- LIFECYCLE  -----------------------------------------------*/
     @SuppressWarnings("MissingPermission")
     override fun onStart() {
         super.onStart()
@@ -493,6 +566,8 @@ class MainActivity : AppCompatActivity(),
         Toast.makeText(this, "This app needs location permission to be able to show your location on the map", Toast.LENGTH_LONG).show()
     }
 
+    /* -------------------------------- PERMISSIONS APP ----------------------------------------- */
+
     override fun onPermissionResult(granted: Boolean) {
         if (granted) {
             enableLocation()
@@ -515,6 +590,7 @@ class MainActivity : AppCompatActivity(),
     override fun onMapReady(mapboxMap: MapboxMap?) {
         //1
         map = mapboxMap ?: return
+
         //2
         val locationRequestBuilder = LocationSettingsRequest.Builder().addLocationRequest(LocationRequest()
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -617,12 +693,14 @@ class MainActivity : AppCompatActivity(),
             .accessToken(Mapbox.getAccessToken()!!) //2
             .origin(originPoint) //3
             .profile(transport)
+            .voiceUnits(DirectionsCriteria.METRIC)
             .destination(endPoint) //4
             .build() //5
             .getRoute(object : Callback<DirectionsResponse> { //6
                 override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
-                    Log.d("MainActivity", t.localizedMessage)
+                    Timber.d(t.localizedMessage)
                 }
+
 
                 override fun onResponse(call: Call<DirectionsResponse>,
                                         response: Response<DirectionsResponse>) {

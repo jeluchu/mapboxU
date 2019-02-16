@@ -1,0 +1,2766 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 94,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "MONTELEON, CALLE, DE",
+        "Número de Finca": "19",
+        "NOMBRE": "MONTELEON, CALLE, DE, 19",
+        "Gis_X": "440214,489",
+        "Gis_Y": "4475620,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "74 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.704823,
+          40.429073
+        ],
+        "type": "Point"
+      },
+      "id": "0125cd5a1f3ea37670d1401bf7b68ad1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 71,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "ATOCHA, CALLE, DE",
+        "Número de Finca": "120",
+        "NOMBRE": "ATOCHA, CALLE, DE, 120",
+        "Gis_X": "441224,6557",
+        "Gis_Y": "4473418,951",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "58.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.692711,
+          40.409313
+        ],
+        "type": "Point"
+      },
+      "id": "09a9d700d4786bf5009f2f6f7c113c05"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 6,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "VALENCIA, CALLE, DE",
+        "Número de Finca": "25",
+        "NOMBRE": "VALENCIA, CALLE, DE, 25",
+        "Gis_X": "440646,3223",
+        "Gis_Y": "4473056,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "5 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.699493,
+          40.406003
+        ],
+        "type": "Point"
+      },
+      "id": "0bb9e568cffac98afe5a100e2bddfddf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 57,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "CALATRAVA, CALLE, DE",
+        "Número de Finca": "42",
+        "NOMBRE": "CALATRAVA, CALLE, DE, 42",
+        "Gis_X": "439455,6557",
+        "Gis_Y": "4473549,326",
+        "Fecha de Alta": 43435,
+        "Nº Cámara": "46 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713571,
+          40.410361
+        ],
+        "type": "Point"
+      },
+      "id": "0d5c5663018ed53f037eccc71f30f388"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 42,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "GRAN VIA, CALLE",
+        "Número de Finca": "73",
+        "NOMBRE": "GRAN VIA, CALLE, 73",
+        "Gis_X": "439712,739",
+        "Gis_Y": "4474978,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "33.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.710677,
+          40.423257
+        ],
+        "type": "Point"
+      },
+      "id": "0ec6219b65d7bcd1619dadad0e57251a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 7,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "ARGUMOSA, CALLE, DE",
+        "Número de Finca": "43",
+        "NOMBRE": "ARGUMOSA, CALLE, DE, 43",
+        "Gis_X": "440951,5307",
+        "Gis_Y": "4473204,451",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "6 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.69591,
+          40.407361
+        ],
+        "type": "Point"
+      },
+      "id": "154e47be167dd3790cc7998f760f6e88"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 17,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "ALCALA, CALLE, DE",
+        "Número de Finca": "51",
+        "NOMBRE": "ALCALA, CALLE, DE, 51",
+        "Gis_X": "441102,1557",
+        "Gis_Y": "4474525,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "14.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694257,
+          40.419272
+        ],
+        "type": "Point"
+      },
+      "id": "1bbb9cf9dad27e93db07370ee2e8bc18"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 58,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "ROSARIO, CALLE, DEL",
+        "Número de Finca": "5",
+        "NOMBRE": "ROSARIO, CALLE, DEL, 5",
+        "Gis_X": "439432,8223",
+        "Gis_Y": "4473475,659",
+        "Fecha de Alta": 43437,
+        "Nº Cámara": "47 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713833,
+          40.409695
+        ],
+        "type": "Point"
+      },
+      "id": "1d6cd9632e9db4400afeae09583f484e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 43,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "LEGANITOS, CALLE, DE",
+        "Número de Finca": "47",
+        "NOMBRE": "LEGANITOS, CALLE, DE, 47",
+        "Gis_X": "439679,6557",
+        "Gis_Y": "4474965,743",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "34 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.711066,
+          40.423137
+        ],
+        "type": "Point"
+      },
+      "id": "201b7d561b7d59ea4518b1099a52cb89"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 30,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "RUIZ, CALLE, DE",
+        "Número de Finca": "23",
+        "NOMBRE": "RUIZ, CALLE, DE, 23",
+        "Gis_X": "440308,6557",
+        "Gis_Y": "4475620,326",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "24 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.703713,
+          40.429079
+        ],
+        "type": "Point"
+      },
+      "id": "224f91ecf530096d6a3b4fb3141b5d61"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 82,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "ALMIRANTE, CALLE, DEL",
+        "Número de Finca": "29",
+        "NOMBRE": "ALMIRANTE, CALLE, DEL, 29",
+        "Gis_X": "441254,0723",
+        "Gis_Y": "4474881,909",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "64 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.6925,
+          40.422494
+        ],
+        "type": "Point"
+      },
+      "id": "2572ab0eea2c1d7de4e3a5d09b2887af"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 54,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "DON PEDRO, CALLE, DE",
+        "Número de Finca": "16",
+        "NOMBRE": "DON PEDRO, CALLE, DE, 16",
+        "Gis_X": "439443,239",
+        "Gis_Y": "4473711,159",
+        "Fecha de Alta": null,
+        "Nº Cámara": "43.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713733,
+          40.411818
+        ],
+        "type": "Point"
+      },
+      "id": "2637d19f33b4378b28df07f86291488e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 22,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "MARQUES DE LA ENSENADA, CALLE, DEL",
+        "Número de Finca": "3",
+        "NOMBRE": "MARQUES DE LA ENSENADA, CALLE, DEL, 3",
+        "Gis_X": "441293,7807",
+        "Gis_Y": "4475221,451",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "17 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.692063,
+          40.425556
+        ],
+        "type": "Point"
+      },
+      "id": "2cb40208c049e8ece985f60642ab7723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 1,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "TOLEDO, CALLE, DEL",
+        "Número de Finca": "125",
+        "NOMBRE": "TOLEDO, CALLE, DEL, 125",
+        "Gis_X": "439654,6834",
+        "Gis_Y": "4473220,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "1.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.711195,
+          40.407412
+        ],
+        "type": "Point"
+      },
+      "id": "2cef3eea88be896131c1e71f99387f66"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 16,
+        "Barrio": "01-03 CORTES",
+        "Calle": "LOS MADRAZO, CALLE, DE",
+        "Número de Finca": "29",
+        "NOMBRE": "LOS MADRAZO, CALLE, DE, 29",
+        "Gis_X": "441088,8223",
+        "Gis_Y": "4474328,243",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "13 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694396,
+          40.417495
+        ],
+        "type": "Point"
+      },
+      "id": "2fdb73647657dc42d8a7d3665e134166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 91,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "CHURRUCA, CALLE, DE",
+        "Número de Finca": "25",
+        "NOMBRE": "CHURRUCA, CALLE, DE, 25",
+        "Gis_X": "440511,6557",
+        "Gis_Y": "4475548,826",
+        "Fecha de Alta": 43439,
+        "Nº Cámara": "71 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.701313,
+          40.428449
+        ],
+        "type": "Point"
+      },
+      "id": "35307d5d1e22975d3c3c85efa041e74a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 83,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "BARBARA DE BRAGANZA, CALLE, DE",
+        "Número de Finca": "14",
+        "NOMBRE": "BARBARA DE BRAGANZA, CALLE, DE, 14",
+        "Gis_X": "441273,9612",
+        "Gis_Y": "4474977,798",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "65 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.692274,
+          40.423359
+        ],
+        "type": "Point"
+      },
+      "id": "373ed2662f87051e4fac6e2d0be477f5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 40,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "REYES, CALLE, DE LOS",
+        "Número de Finca": "18",
+        "NOMBRE": "REYES, CALLE, DE LOS, 18",
+        "Gis_X": "439715,2807",
+        "Gis_Y": "4475011,951",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "32 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.71065,
+          40.423556
+        ],
+        "type": "Point"
+      },
+      "id": "376b5d198b32e8a13b49b996739c2887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 55,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SAN BUENAVENTURA, CALLE, DE",
+        "Número de Finca": "1",
+        "NOMBRE": "SAN BUENAVENTURA, CALLE, DE, 1",
+        "Gis_X": "439389,9057",
+        "Gis_Y": "4473598,993",
+        "Fecha de Alta": 43435,
+        "Nº Cámara": "44 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.714351,
+          40.410803
+        ],
+        "type": "Point"
+      },
+      "id": "38e8a867428df95c6f4a64bd45898a59"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 2,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "TOLEDO, CALLE, DE",
+        "Número de Finca": "125",
+        "NOMBRE": "TOLEDO, CALLE, DE, 125",
+        "Gis_X": "439658,4057",
+        "Gis_Y": "4473220,854",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "1.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.711151,
+          40.407416
+        ],
+        "type": "Point"
+      },
+      "id": "391d278dd23175d956fd837588d28b3a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 102,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "SAN LEONARDO, CALLE, DE",
+        "Número de Finca": "10",
+        "NOMBRE": "SAN LEONARDO, CALLE, DE, 10",
+        "Gis_X": "439675,6557",
+        "Gis_Y": "4475141,701",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "79 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.71113,
+          40.424722
+        ],
+        "type": "Point"
+      },
+      "id": "3d5649ac90af014b2666b816f9e18ed2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 52,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "YESEROS, CALLE, DE LOS",
+        "Número de Finca": "3",
+        "NOMBRE": "YESEROS, CALLE, DE LOS, 3",
+        "Gis_X": "439426,4057",
+        "Gis_Y": "4473769,493",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "42 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713937,
+          40.412342
+        ],
+        "type": "Point"
+      },
+      "id": "3f1567a8675b1c39d83b92cdd24a704b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 104,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "GRAN VIA, CALLE",
+        "Número de Finca": "76",
+        "NOMBRE": "GRAN VIA, CALLE, 76",
+        "Gis_X": "439745,0723",
+        "Gis_Y": "4474955,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "80.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.710294,
+          40.423052
+        ],
+        "type": "Point"
+      },
+      "id": "3f8959f839689dfd53e5d170971d946d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 64,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "RIBERA DE CURTIDORES, CALLE, DE LA",
+        "Número de Finca": "S/N",
+        "NOMBRE": "RIBERA DE CURTIDORES, CALLE, DE LA, S/N",
+        "Gis_X": "439995,7978",
+        "Gis_Y": "4473079,514",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "52.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.707161,
+          40.406168
+        ],
+        "type": "Point"
+      },
+      "id": "4565d22ea73866bfd5fe909739280c09"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 51,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "MORERIA, CALLE, DE LA",
+        "Número de Finca": "10",
+        "NOMBRE": "MORERIA, CALLE, DE LA, 10",
+        "Gis_X": "439432,989",
+        "Gis_Y": "4473843,326",
+        "Fecha de Alta": 43439,
+        "Nº Cámara": "41 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713866,
+          40.413008
+        ],
+        "type": "Point"
+      },
+      "id": "474a2f50706a77fb71b1ec0ac227742c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 103,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "GRAN VIA, CALLE",
+        "Número de Finca": "76",
+        "NOMBRE": "GRAN VIA, CALLE, 76",
+        "Gis_X": "439746,739",
+        "Gis_Y": "4474958,493",
+        "Fecha de Alta": 43437,
+        "Nº Cámara": "80.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.710274,
+          40.423076
+        ],
+        "type": "Point"
+      },
+      "id": "4790c784d76540a4c8621701e9314c1e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 19,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "ALCALA, CALLE, DE",
+        "Número de Finca": "51",
+        "NOMBRE": "ALCALA, CALLE, DE, 51",
+        "Gis_X": "441102,5723",
+        "Gis_Y": "4474519,993",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "14.3 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694252,
+          40.419223
+        ],
+        "type": "Point"
+      },
+      "id": "47d0ae27187e77b66006c7e12f7c211c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 20,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "PRIM, CALLE, DE",
+        "Número de Finca": "14",
+        "NOMBRE": "PRIM, CALLE, DE, 14",
+        "Gis_X": "441255,239",
+        "Gis_Y": "4474817,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "15 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.69248,
+          40.421913
+        ],
+        "type": "Point"
+      },
+      "id": "49efbb922d1d3c2c6bde8d6396ac36a2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 109,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SEGOVIA, CALLE, DE",
+        "Número de Finca": "37",
+        "NOMBRE": "SEGOVIA, CALLE, DE, 37",
+        "Gis_X": "439248,989",
+        "Gis_Y": "4473949,743",
+        "Fecha de Alta": 43439,
+        "Nº Cámara": "84 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.716045,
+          40.413953
+        ],
+        "type": "Point"
+      },
+      "id": "4ea1650642f07de5b2124230baf7c4a6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 31,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "RUIZ JIMENEZ, GLORIETA, DE",
+        "Número de Finca": "8",
+        "NOMBRE": "RUIZ JIMENEZ, GLORIETA, DE, 8",
+        "Gis_X": "440120,739",
+        "Gis_Y": "4475636,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "25.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.70593,
+          40.429207
+        ],
+        "type": "Point"
+      },
+      "id": "5699aa0d2439dfb422af7157c4c12ab0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 15,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ZORRILLA, CALLE, DE",
+        "Número de Finca": "31",
+        "NOMBRE": "ZORRILLA, CALLE, DE, 31",
+        "Gis_X": "441067,489",
+        "Gis_Y": "4474240,493",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "12 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.69464,
+          40.416703
+        ],
+        "type": "Point"
+      },
+      "id": "56a086fc0c4b5a815c6f48c459906816"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 106,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "REQUENA, CALLE, DE",
+        "Número de Finca": "7",
+        "NOMBRE": "REQUENA, CALLE, DE, 7",
+        "Gis_X": "439523,5307",
+        "Gis_Y": "4474299,326",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "82 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712843,
+          40.417122
+        ],
+        "type": "Point"
+      },
+      "id": "5729e23cb15c775e4de17c76e52e1c28"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 46,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "REQUENA, CALLE, DE",
+        "Número de Finca": "7",
+        "NOMBRE": "REQUENA, CALLE, DE, 7",
+        "Gis_X": "439525,7807",
+        "Gis_Y": "4474298,576",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "37 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712816,
+          40.417115
+        ],
+        "type": "Point"
+      },
+      "id": "597c0c9e64b681bdb747a81ccba8b29f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 29,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "FUENCARRAL, CALLE, DE",
+        "Número de Finca": "107",
+        "NOMBRE": "FUENCARRAL, CALLE, DE, 107",
+        "Gis_X": "440430,489",
+        "Gis_Y": "4475590,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "23 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.702274,
+          40.428818
+        ],
+        "type": "Point"
+      },
+      "id": "5c4fd6a0bd508901a7e22797ce9123be"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 81,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ALCALA, CALLE, DE",
+        "Número de Finca": "51",
+        "NOMBRE": "ALCALA, CALLE, DE, 51",
+        "Gis_X": "441093,6557",
+        "Gis_Y": "4474513,076",
+        "Fecha de Alta": null,
+        "Nº Cámara": "63.4 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694357,
+          40.41916
+        ],
+        "type": "Point"
+      },
+      "id": "60c2666b793de63288b5db02a80a6a1d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 3,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "CAMPILLO DEL MUNDO NUEVO, PLAZA, DEL",
+        "Número de Finca": "S/N",
+        "NOMBRE": "CAMPILLO DEL MUNDO NUEVO, PLAZA, DEL, S/N",
+        "Gis_X": "439795,4257",
+        "Gis_Y": "4473105,839",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.709525,
+          40.40639
+        ],
+        "type": "Point"
+      },
+      "id": "62d79bed84035d34535b66bfc2717500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 105,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SAN QUINTIN, CALLE, DE",
+        "Número de Finca": "6",
+        "NOMBRE": "SAN QUINTIN, CALLE, DE, 6",
+        "Gis_X": "439562,739",
+        "Gis_Y": "4474573,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "81 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712407,
+          40.419598
+        ],
+        "type": "Point"
+      },
+      "id": "63f9f33f190280e68abe6a84936c93ed"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 13,
+        "Barrio": "01-03 CORTES",
+        "Calle": "CORTES, PLAZA, DE LAS",
+        "Número de Finca": "6",
+        "NOMBRE": "CORTES, PLAZA, DE LAS, 6",
+        "Gis_X": "441042,5723",
+        "Gis_Y": "4474107,993",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "11.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694921,
+          40.415507
+        ],
+        "type": "Point"
+      },
+      "id": "6a9f6b6860b40feef2a971218badf6bf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 37,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "SEMINARIO DE NOBLES, CALLE, DEL",
+        "Número de Finca": "2",
+        "NOMBRE": "SEMINARIO DE NOBLES, CALLE, DEL, 2",
+        "Gis_X": "439423,2807",
+        "Gis_Y": "4475507,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "29 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.714139,
+          40.428001
+        ],
+        "type": "Point"
+      },
+      "id": "6afa4a39d10b00c03e7f514e981e6265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 112,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "VISTILLAS, TRAVESIA, DE LAS",
+        "Número de Finca": "2",
+        "NOMBRE": "VISTILLAS, TRAVESIA, DE LAS, 2",
+        "Gis_X": "439405,1557",
+        "Gis_Y": "4473641,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "87 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.714175,
+          40.411184
+        ],
+        "type": "Point"
+      },
+      "id": "6bdb7b9beab6064b3b966a6090ff0009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 21,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "BARBARA DE BRAGANZA, CALLE, DE",
+        "Número de Finca": "13",
+        "NOMBRE": "BARBARA DE BRAGANZA, CALLE, DE, 13",
+        "Gis_X": "441311,1834",
+        "Gis_Y": "4474973,965",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "16 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.691835,
+          40.423327
+        ],
+        "type": "Point"
+      },
+      "id": "6c4f948a755c99166a0766a8cdbc4845"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 35,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "SANTA CRUZ DE MARCENADO, CALLE, DE",
+        "Número de Finca": "24 B",
+        "NOMBRE": "SANTA CRUZ DE MARCENADO, CALLE, DE, 24 B",
+        "Gis_X": "439566,0723",
+        "Gis_Y": "4475675,159",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "28.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712472,
+          40.429519
+        ],
+        "type": "Point"
+      },
+      "id": "6d891c4111db78f1a68995eebee0d503"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 44,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "MARINA ESPAÑOLA, PLAZA, DE LA",
+        "Número de Finca": "8",
+        "NOMBRE": "MARINA ESPAÑOLA, PLAZA, DE LA, 8",
+        "Gis_X": "439539,5723",
+        "Gis_Y": "4474664,743",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "35 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712688,
+          40.420415
+        ],
+        "type": "Point"
+      },
+      "id": "6f3b999f9d576e008b68601ddad881cb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 90,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "MEJIA LEQUERICA, CALLE, DE",
+        "Número de Finca": "21",
+        "NOMBRE": "MEJIA LEQUERICA, CALLE, DE, 21",
+        "Gis_X": "440679,739",
+        "Gis_Y": "4475498,576",
+        "Fecha de Alta": 43438,
+        "Nº Cámara": "70.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.699327,
+          40.428009
+        ],
+        "type": "Point"
+      },
+      "id": "6f789e3d29fc95e8493f433715ba93f8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 39,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "DUQUE DE LIRIA, CALLE, DEL",
+        "Número de Finca": "S/N",
+        "NOMBRE": "DUQUE DE LIRIA, CALLE, DEL, S/N",
+        "Gis_X": "439518,2807",
+        "Gis_Y": "4475351,451",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "31 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713005,
+          40.4266
+        ],
+        "type": "Point"
+      },
+      "id": "706656181174601eb41487878a7f9f3a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 115,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "ISABEL TINTERO, CALLE, DE",
+        "Número de Finca": "2",
+        "NOMBRE": "ISABEL TINTERO, CALLE, DE, 2",
+        "Gis_X": "439537,4057",
+        "Gis_Y": "4473343,951",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "90 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712588,
+          40.408517
+        ],
+        "type": "Point"
+      },
+      "id": "711233a1705938aafb0ca326210d4090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 67,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "MESON DE PAREDES, CALLE, DEL",
+        "Número de Finca": "85",
+        "NOMBRE": "MESON DE PAREDES, CALLE, DEL, 85",
+        "Gis_X": "440504,7609",
+        "Gis_Y": "4473030,177",
+        "Fecha de Alta": 43441,
+        "Nº Cámara": "54 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.701159,
+          40.40576
+        ],
+        "type": "Point"
+      },
+      "id": "756984a727eb587a9aa2a04c9c2f8ee9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 95,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "SAN BERNARDO, CALLE, DE",
+        "Número de Finca": "88",
+        "NOMBRE": "SAN BERNARDO, CALLE, DE, 88",
+        "Gis_X": "440115,0723",
+        "Gis_Y": "4475593,076",
+        "Fecha de Alta": null,
+        "Nº Cámara": "75.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.705992,
+          40.42882
+        ],
+        "type": "Point"
+      },
+      "id": "76dfe59f15db883d8d83e963674c376a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 14,
+        "Barrio": "01-03 CORTES",
+        "Calle": "CORTES, PLAZA, DE LAS",
+        "Número de Finca": "6",
+        "NOMBRE": "CORTES, PLAZA, DE LAS, 6",
+        "Gis_X": "441041,239",
+        "Gis_Y": "4474105,326",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "11.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694937,
+          40.415483
+        ],
+        "type": "Point"
+      },
+      "id": "7a96fe8c4448b443b81d97fd4d203e66"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 47,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "MAYOR, CALLE",
+        "Número de Finca": "77",
+        "NOMBRE": "MAYOR, CALLE, 77",
+        "Gis_X": "439482,4057",
+        "Gis_Y": "4474066,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "38.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713305,
+          40.415025
+        ],
+        "type": "Point"
+      },
+      "id": "7cb1c6c9cc553481421c9ed8bd53fd09"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 108,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "MAYOR, CALLE",
+        "Número de Finca": "86",
+        "NOMBRE": "MAYOR, CALLE, 86",
+        "Gis_X": "439516,4057",
+        "Gis_Y": "4474078,576",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "83.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712906,
+          40.415133
+        ],
+        "type": "Point"
+      },
+      "id": "80d0a23545fa56fb2ce2c7efd20a96f7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 27,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "MEJIA LEQUERICA, CALLE, DE",
+        "Número de Finca": "23",
+        "NOMBRE": "MEJIA LEQUERICA, CALLE, DE, 23",
+        "Gis_X": "440671,739",
+        "Gis_Y": "4475529,743",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "21.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.699424,
+          40.428289
+        ],
+        "type": "Point"
+      },
+      "id": "80fc31ecec65be2f38b4d6a444efead5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 4,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "CAMPILLO DEL MUNDO NUEVO, PLAZA, DEL",
+        "Número de Finca": "5",
+        "NOMBRE": "CAMPILLO DEL MUNDO NUEVO, PLAZA, DEL, 5",
+        "Gis_X": "439924,3458",
+        "Gis_Y": "4473071,231",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "3 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.708003,
+          40.406088
+        ],
+        "type": "Point"
+      },
+      "id": "822956aaff70d253860424ee1fbbce28"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 72,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "ATOCHA, CALLE, DE",
+        "Número de Finca": "120",
+        "NOMBRE": "ATOCHA, CALLE, DE, 120",
+        "Gis_X": "441226,6557",
+        "Gis_Y": "4473421,451",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "58.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.692688,
+          40.409336
+        ],
+        "type": "Point"
+      },
+      "id": "8292cbe9a9887d08d9cd1cc762c9e896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 74,
+        "Barrio": "01-03 CORTES",
+        "Calle": "GOBERNADOR, CALLE, DEL",
+        "Número de Finca": "32",
+        "NOMBRE": "GOBERNADOR, CALLE, DEL, 32",
+        "Gis_X": "441160,989",
+        "Gis_Y": "4473653,993",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "60 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.693483,
+          40.411426
+        ],
+        "type": "Point"
+      },
+      "id": "83c59b59e615b3518d09bc0ebb8cadc5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 56,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SAN FRANCISCO, CARRERA, DE",
+        "Número de Finca": "15",
+        "NOMBRE": "SAN FRANCISCO, CARRERA, DE, 15",
+        "Gis_X": "439449,5723",
+        "Gis_Y": "4473576,493",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "45 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713646,
+          40.410605
+        ],
+        "type": "Point"
+      },
+      "id": "876c833f237f0e582818ea12bcec3e87"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 50,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "ANGOSTA DE LOS MANCEBOS, CALLE",
+        "Número de Finca": "8",
+        "NOMBRE": "ANGOSTA DE LOS MANCEBOS, CALLE, 8",
+        "Gis_X": "439451,2807",
+        "Gis_Y": "4473837,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "40 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.71365,
+          40.412953
+        ],
+        "type": "Point"
+      },
+      "id": "87d0798b3fbefc6afe6e74ab623ea60d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 60,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "GRAN VIA DE SAN FRANCISCO, AVENIDA, DE LA",
+        "Número de Finca": "S/N",
+        "NOMBRE": "GRAN VIA DE SAN FRANCISCO, AVENIDA, DE LA, S/N",
+        "Gis_X": "439472,2807",
+        "Gis_Y": "4473350,326",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "49 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713356,
+          40.408569
+        ],
+        "type": "Point"
+      },
+      "id": "88a9a8019e433a89da79b1c5ba513c2e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 34,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "BALTASAR GRACIAN, CALLE, DE",
+        "Número de Finca": "6",
+        "NOMBRE": "BALTASAR GRACIAN, CALLE, DE, 6",
+        "Gis_X": "439736,0723",
+        "Gis_Y": "4475718,159",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "27 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.710472,
+          40.429919
+        ],
+        "type": "Point"
+      },
+      "id": "89e7d04f01749d85c8ed5481ddb7d22f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 70,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "ARGUMOSA, CALLE, DE",
+        "Número de Finca": "43",
+        "NOMBRE": "ARGUMOSA, CALLE, DE, 43",
+        "Gis_X": "440950,2807",
+        "Gis_Y": "4473200,576",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "57 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.695925,
+          40.407326
+        ],
+        "type": "Point"
+      },
+      "id": "8f526ec586b41b8c92b09c32aa10b66a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 48,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "MAYOR, CALLE",
+        "Número de Finca": "77",
+        "NOMBRE": "MAYOR, CALLE, 77",
+        "Gis_X": "439482,4057",
+        "Gis_Y": "4474069,701",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "38.2",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713306,
+          40.41505
+        ],
+        "type": "Point"
+      },
+      "id": "90dcdbc6d011c6203577bb00a66ed280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 38,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "MARTIRES DE ALCALA, CALLE, DE LOS",
+        "Número de Finca": "2",
+        "NOMBRE": "MARTIRES DE ALCALA, CALLE, DE LOS, 2",
+        "Gis_X": "439452,0307",
+        "Gis_Y": "4475451,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "30 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713795,
+          40.427492
+        ],
+        "type": "Point"
+      },
+      "id": "9431b8f054a356269cfb7324309f197e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 66,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "MIGUEL SERVET, CALLE, DE",
+        "Número de Finca": "25",
+        "NOMBRE": "MIGUEL SERVET, CALLE, DE, 25",
+        "Gis_X": "440421,3515",
+        "Gis_Y": "4473007,894",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "53",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.70214,
+          40.405553
+        ],
+        "type": "Point"
+      },
+      "id": "952cf3789e72ce10980b6061c3868534"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 111,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "DON PEDRO, CALLE, DE",
+        "Número de Finca": "18",
+        "NOMBRE": "DON PEDRO, CALLE, DE, 18",
+        "Gis_X": "439403,4057",
+        "Gis_Y": "4473718,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "86 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.714203,
+          40.41188
+        ],
+        "type": "Point"
+      },
+      "id": "9593115509cfac0fa7a86fc811a3c50e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 63,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "RIBERA DE CURTIDORES, CALLE, DE LA",
+        "Número de Finca": "S/N",
+        "NOMBRE": "RIBERA DE CURTIDORES, CALLE, DE LA, S/N",
+        "Gis_X": "439993,0723",
+        "Gis_Y": "4473079,076",
+        "Fecha de Alta": null,
+        "Nº Cámara": "52.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.707193,
+          40.406163
+        ],
+        "type": "Point"
+      },
+      "id": "96d9c87b114b900e90c39259ad345a6d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 92,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "MANUELA MALASAÑA, CALLE, DE",
+        "Número de Finca": "1",
+        "NOMBRE": "MANUELA MALASAÑA, CALLE, DE, 1",
+        "Gis_X": "440423,5723",
+        "Gis_Y": "4475563,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "72 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.702353,
+          40.428578
+        ],
+        "type": "Point"
+      },
+      "id": "97395facf67669f259609cb16a3ec268"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 114,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SAN BERNABE, CALLE, DE",
+        "Número de Finca": "13",
+        "NOMBRE": "SAN BERNABE, CALLE, DE, 13",
+        "Gis_X": "439428,489",
+        "Gis_Y": "4473411,909",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "89 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713878,
+          40.409121
+        ],
+        "type": "Point"
+      },
+      "id": "999e5f24e672e67a1555d8263ae9ccdb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 96,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "SAN BERNARDO, CALLE, DE",
+        "Número de Finca": "88",
+        "NOMBRE": "SAN BERNARDO, CALLE, DE, 88",
+        "Gis_X": "440112,239",
+        "Gis_Y": "4475593,659",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "75.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.706026,
+          40.428825
+        ],
+        "type": "Point"
+      },
+      "id": "9ba02a25073e23663b9f8a62ed01cde6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 28,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "LARRA, CALLE, DE",
+        "Número de Finca": "23",
+        "NOMBRE": "LARRA, CALLE, DE, 23",
+        "Gis_X": "440577,6834",
+        "Gis_Y": "4475554,521",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "22 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.700536,
+          40.428505
+        ],
+        "type": "Point"
+      },
+      "id": "9ba29d3521be9778b0d2763cbb5d6493"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 85,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "CAMPOAMOR, CALLE, DE",
+        "Número de Finca": "17",
+        "NOMBRE": "CAMPOAMOR, CALLE, DE, 17",
+        "Gis_X": "441036,5052",
+        "Gis_Y": "4475365,402",
+        "Fecha de Alta": 43441,
+        "Nº Cámara": "67 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.695109,
+          40.426834
+        ],
+        "type": "Point"
+      },
+      "id": "9f0ea75cd69a8b7e1e1318470d34df5d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 79,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ALCALA, CALLE, DE",
+        "Número de Finca": "S/N",
+        "NOMBRE": "ALCALA, CALLE, DE, S/N",
+        "Gis_X": "441094,6557",
+        "Gis_Y": "4474507,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "63.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694344,
+          40.419109
+        ],
+        "type": "Point"
+      },
+      "id": "a2a1edda2e54be6f4cde3c6bc6705631"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 62,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "CAMPILLO DEL MUNDO NUEVO, PLAZA, DEL",
+        "Número de Finca": "6",
+        "NOMBRE": "CAMPILLO DEL MUNDO NUEVO, PLAZA, DEL, 6",
+        "Gis_X": "439812,0347",
+        "Gis_Y": "4473121,571",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "51 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.709331,
+          40.406533
+        ],
+        "type": "Point"
+      },
+      "id": "a890a0615b9e99bb4374c260ead9282c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 80,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ALCALA, CALLE, DE",
+        "Número de Finca": "51",
+        "NOMBRE": "ALCALA, CALLE, DE, 51",
+        "Gis_X": "441093,8223",
+        "Gis_Y": "4474510,243",
+        "Fecha de Alta": 43435,
+        "Nº Cámara": "63.3 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694354,
+          40.419135
+        ],
+        "type": "Point"
+      },
+      "id": "a91b39905062fe62b6a739d706138a18"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 59,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "AGUILA, CALLE, DEL",
+        "Número de Finca": "25",
+        "NOMBRE": "AGUILA, CALLE, DEL, 25",
+        "Gis_X": "439510,6557",
+        "Gis_Y": "4473383,451",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "48 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712907,
+          40.40887
+        ],
+        "type": "Point"
+      },
+      "id": "a9a4c656a11310333184bd3c34f87536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 99,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "MARTIRES DE ALCALA, CALLE, DE LOS",
+        "Número de Finca": "9",
+        "NOMBRE": "MARTIRES DE ALCALA, CALLE, DE LOS, 9",
+        "Gis_X": "439555,0723",
+        "Gis_Y": "4475645,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "77.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712599,
+          40.429254
+        ],
+        "type": "Point"
+      },
+      "id": "af84d639bf45f750365e1a456c58272e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 24,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "SANTA BARBARA, PLAZA, DE",
+        "Número de Finca": "3",
+        "NOMBRE": "SANTA BARBARA, PLAZA, DE, 3",
+        "Gis_X": "440931,6834",
+        "Gis_Y": "4475411,521",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "19 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.696349,
+          40.427242
+        ],
+        "type": "Point"
+      },
+      "id": "afe91cd116cfd2b2faaed23bff55e690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 100,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "MARTIRES DE ALCALA, CALLE, DE LOS",
+        "Número de Finca": "9",
+        "NOMBRE": "MARTIRES DE ALCALA, CALLE, DE LOS, 9",
+        "Gis_X": "439552,5723",
+        "Gis_Y": "4475647,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "77.3 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712629,
+          40.429265
+        ],
+        "type": "Point"
+      },
+      "id": "b238243f38d3f76361a0d79fce96e9a7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 18,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "ALCALA, CALLE, DE",
+        "Número de Finca": "51",
+        "NOMBRE": "ALCALA, CALLE, DE, 51",
+        "Gis_X": "441102,489",
+        "Gis_Y": "4474522,576",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "14.2",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694253,
+          40.419246
+        ],
+        "type": "Point"
+      },
+      "id": "b446ea7b4d04158d35d9ec3d59f07d32"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 84,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "GENERAL CASTAÑOS, CALLE, DEL",
+        "Número de Finca": "15",
+        "NOMBRE": "GENERAL CASTAÑOS, CALLE, DEL, 15",
+        "Gis_X": "441160,5307",
+        "Gis_Y": "4475292,701",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "66 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.69364,
+          40.426188
+        ],
+        "type": "Point"
+      },
+      "id": "b522fde76fc41dd7da8f6010512c6741"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 49,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SEGOVIA, RONDA, DE",
+        "Número de Finca": "S/N",
+        "NOMBRE": "SEGOVIA, RONDA, DE, S/N",
+        "Gis_X": "439188,489",
+        "Gis_Y": "4473936,493",
+        "Fecha de Alta": 43439,
+        "Nº Cámara": "39 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.716757,
+          40.413829
+        ],
+        "type": "Point"
+      },
+      "id": "b8392d169992cf7615e99e41f763651c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 69,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "MALLORCA, CALLE, DE",
+        "Número de Finca": "6",
+        "NOMBRE": "MALLORCA, CALLE, DE, 6",
+        "Gis_X": "440780,489",
+        "Gis_Y": "4473140,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "56 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.69792,
+          40.406772
+        ],
+        "type": "Point"
+      },
+      "id": "b8d0c65134d756e5fe3982e29ea75f2d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 23,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "ARGENSOLA, CALLE, DE",
+        "Número de Finca": "30",
+        "NOMBRE": "ARGENSOLA, CALLE, DE, 30",
+        "Gis_X": "441140,0168",
+        "Gis_Y": "4475338,354",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "18 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.693886,
+          40.426598
+        ],
+        "type": "Point"
+      },
+      "id": "b9eff594194008c18c3b46d7d6ee2b80"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 97,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "CONDE DUQUE, CALLE, DEL",
+        "Número de Finca": "44",
+        "NOMBRE": "CONDE DUQUE, CALLE, DEL, 44",
+        "Gis_X": "439848,239",
+        "Gis_Y": "4475647,743",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "76 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.709143,
+          40.429293
+        ],
+        "type": "Point"
+      },
+      "id": "baf5a934eb47af32e73c7d8e5c24ab67"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 11,
+        "Barrio": "01-03 CORTES",
+        "Calle": "PLATERIA DE MARTINEZ, PLAZA, DE LA",
+        "Número de Finca": "3",
+        "NOMBRE": "PLATERIA DE MARTINEZ, PLAZA, DE LA, 3",
+        "Gis_X": "441137,739",
+        "Gis_Y": "4473799,159",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "9 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.693771,
+          40.412732
+        ],
+        "type": "Point"
+      },
+      "id": "bbe1cf6273aaa4b637f3525ca55ebca2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 33,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "ACUERDO, CALLE, DEL",
+        "Número de Finca": "41",
+        "NOMBRE": "ACUERDO, CALLE, DEL, 41",
+        "Gis_X": "439963,489",
+        "Gis_Y": "4475680,993",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "26 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.707788,
+          40.429601
+        ],
+        "type": "Point"
+      },
+      "id": "bcd56e2aa98dac5127ebabdd6b186101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 45,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SAN QUINTIN, CALLE, DE",
+        "Número de Finca": "6",
+        "NOMBRE": "SAN QUINTIN, CALLE, DE, 6",
+        "Gis_X": "439563,3223",
+        "Gis_Y": "4474563,243",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "36 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712399,
+          40.419502
+        ],
+        "type": "Point"
+      },
+      "id": "bd574777d765e0e9b7c96d40bbd4679d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 61,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "TOLEDO, CALLE, DE",
+        "Número de Finca": "104",
+        "NOMBRE": "TOLEDO, CALLE, DE, 104",
+        "Gis_X": "439657,9612",
+        "Gis_Y": "4473262,798",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "50 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.71116,
+          40.407794
+        ],
+        "type": "Point"
+      },
+      "id": "bf0f0d5816cc9998dbd57add5c5a1249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 93,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "SAN ANDRES, CALLE, DE",
+        "Número de Finca": "44",
+        "NOMBRE": "SAN ANDRES, CALLE, DE, 44",
+        "Gis_X": "440346,3223",
+        "Gis_Y": "4475604,326",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "73 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.703268,
+          40.428937
+        ],
+        "type": "Point"
+      },
+      "id": "c14f938d75864c83c398209ef9894bf5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 110,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "MORERIA, CALLE, DE LA",
+        "Número de Finca": "11",
+        "NOMBRE": "MORERIA, CALLE, DE LA, 11",
+        "Gis_X": "439471,1557",
+        "Gis_Y": "4473850,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "85 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713417,
+          40.413078
+        ],
+        "type": "Point"
+      },
+      "id": "c167ced077adc533b2251804e8baeaa0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 53,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "DON PEDRO, CALLE, DE",
+        "Número de Finca": "16",
+        "NOMBRE": "DON PEDRO, CALLE, DE, 16",
+        "Gis_X": "439444,2807",
+        "Gis_Y": "4473711,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "43.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713721,
+          40.411817
+        ],
+        "type": "Point"
+      },
+      "id": "c34738d2540fd3ebbb13f0a2c3b14f3c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 65,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "RIBERA DE CURTIDORES, CALLE, DE LA",
+        "Número de Finca": "S/N",
+        "NOMBRE": "RIBERA DE CURTIDORES, CALLE, DE LA, S/N",
+        "Gis_X": "439999,8223",
+        "Gis_Y": "4473080,743",
+        "Fecha de Alta": null,
+        "Nº Cámara": "52.3 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.707114,
+          40.406179
+        ],
+        "type": "Point"
+      },
+      "id": "c35a564562eae546384044c6334a08fe"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 78,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ALCALA, CALLE, DE",
+        "Número de Finca": "S/N",
+        "NOMBRE": "ALCALA, CALLE, DE, S/N",
+        "Gis_X": "441095,4057",
+        "Gis_Y": "4474504,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "63.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694335,
+          40.419082
+        ],
+        "type": "Point"
+      },
+      "id": "c4bfeb76dad8b2cf40c6c5fb1d1495e2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 73,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ALMADEN, CALLE, DE",
+        "Número de Finca": "28",
+        "NOMBRE": "ALMADEN, CALLE, DE, 28",
+        "Gis_X": "441178,9057",
+        "Gis_Y": "4473589,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "59 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.693266,
+          40.410849
+        ],
+        "type": "Point"
+      },
+      "id": "c605ecc5d1b574be53695927ef63a3c0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 26,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "MEJIA LEQUERICA, CALLE, DE",
+        "Número de Finca": "23",
+        "NOMBRE": "MEJIA LEQUERICA, CALLE, DE, 23",
+        "Gis_X": "440668,9057",
+        "Gis_Y": "4475529,354",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "21.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.699458,
+          40.428285
+        ],
+        "type": "Point"
+      },
+      "id": "c61b310b515007d03e0a2918d911dd6d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 77,
+        "Barrio": "01-03 CORTES",
+        "Calle": "CORTES, PLAZA, DE LAS",
+        "Número de Finca": "6",
+        "NOMBRE": "CORTES, PLAZA, DE LAS, 6",
+        "Gis_X": "441020,989",
+        "Gis_Y": "4474109,576",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "62.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.695176,
+          40.41552
+        ],
+        "type": "Point"
+      },
+      "id": "c644af0fea82430d888793b6f074d182"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 88,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "HERMANOS ALVAREZ QUINTERO, CALLE, DE LOS",
+        "Número de Finca": "6",
+        "NOMBRE": "HERMANOS ALVAREZ QUINTERO, CALLE, DE LOS, 6",
+        "Gis_X": "440852,8501",
+        "Gis_Y": "4475450,021",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "69 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.697282,
+          40.427584
+        ],
+        "type": "Point"
+      },
+      "id": "c73955d97de7139272c3fb601c20866b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 8,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ATOCHA, CALLE, DE",
+        "Número de Finca": "127",
+        "NOMBRE": "ATOCHA, CALLE, DE, 127",
+        "Gis_X": "441223,2807",
+        "Gis_Y": "4473436,201",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "7.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.692729,
+          40.409468
+        ],
+        "type": "Point"
+      },
+      "id": "c9a3141c43d5bdfcaa911a12076272e1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 25,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "ANTONIO FLORES, CALLE, DE",
+        "Número de Finca": "6",
+        "NOMBRE": "ANTONIO FLORES, CALLE, DE, 6",
+        "Gis_X": "440788,8501",
+        "Gis_Y": "4475495,076",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "20 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.698041,
+          40.427985
+        ],
+        "type": "Point"
+      },
+      "id": "ceb95522a43d999a91d496d6fe590107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 68,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "AMPARO, CALLE, DE",
+        "Número de Finca": "100",
+        "NOMBRE": "AMPARO, CALLE, DE, 100",
+        "Gis_X": "440577,4057",
+        "Gis_Y": "4473064,493",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "55 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.700306,
+          40.406074
+        ],
+        "type": "Point"
+      },
+      "id": "cfc7bcfaf558c75264cec35994eb2a59"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 98,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "MARTIRES DE ALCALA, CALLE, DE LOS",
+        "Número de Finca": "9",
+        "NOMBRE": "MARTIRES DE ALCALA, CALLE, DE LOS, 9",
+        "Gis_X": "439557,8223",
+        "Gis_Y": "4475644,243",
+        "info": "https://www.laelipasiqueflipa.com/comerciate/lledo",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "77.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712566,
+          40.42924
+        ],
+        "type": "Point"
+      },
+      "id": "d37fa14eeb4a79efdb8b2ecd853c1aef"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 10,
+        "Barrio": "01-03 CORTES",
+        "Calle": "PLATERIA DE MARTINEZ, PLAZA, DE LA",
+        "Número de Finca": "1",
+        "NOMBRE": "PLATERIA DE MARTINEZ, PLAZA, DE LA, 1",
+        "Gis_X": "441147,239",
+        "Gis_Y": "4473784,909",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "8 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.693658,
+          40.412604
+        ],
+        "type": "Point"
+      },
+      "id": "d53ca6107a7f30ec4437f2b7ec9434bb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 89,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "MEJIA LEQUERICA, CALLE, DE",
+        "Número de Finca": "21",
+        "NOMBRE": "MEJIA LEQUERICA, CALLE, DE, 21",
+        "Gis_X": "440682,8501",
+        "Gis_Y": "4475498,354",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "70.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.69929,
+          40.428007
+        ],
+        "type": "Point"
+      },
+      "id": "d5dfaa3cdddd64757c3b4ac34f9159fe"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 76,
+        "Barrio": "01-03 CORTES",
+        "Calle": "CORTES, PLAZA, DE LAS",
+        "Número de Finca": "6",
+        "NOMBRE": "CORTES, PLAZA, DE LAS, 6",
+        "Gis_X": "441019,989",
+        "Gis_Y": "4474106,243",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "62.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.695187,
+          40.41549
+        ],
+        "type": "Point"
+      },
+      "id": "d617ac5ef15929774eaacd014501c4e9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 41,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "GRAN VIA, CALLE",
+        "Número de Finca": "73",
+        "NOMBRE": "GRAN VIA, CALLE, 73",
+        "Gis_X": "439710,8223",
+        "Gis_Y": "4474976,243",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "33.1 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.710699,
+          40.423234
+        ],
+        "type": "Point"
+      },
+      "id": "d68e4d2c157e7962800852c45873ea8d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 32,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "RUIZ JIMENEZ, GLORIETA, DE",
+        "Número de Finca": "8",
+        "NOMBRE": "RUIZ JIMENEZ, GLORIETA, DE, 8",
+        "Gis_X": "440121,6557",
+        "Gis_Y": "4475635,909",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "25.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.705919,
+          40.429206
+        ],
+        "type": "Point"
+      },
+      "id": "d8eb5dd1b52844f4c38d43f6c6b1ddff"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 9,
+        "Barrio": "01-03 CORTES",
+        "Calle": "ATOCHA, CALLE, DE",
+        "Número de Finca": "127",
+        "NOMBRE": "ATOCHA, CALLE, DE, 127",
+        "Gis_X": "441221,7807",
+        "Gis_Y": "4473433,451",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "7.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.692747,
+          40.409443
+        ],
+        "type": "Point"
+      },
+      "id": "daaa0e47f0aa4eefeaf5272047615cc3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 12,
+        "Barrio": "01-03 CORTES",
+        "Calle": "LOPE DE VEGA, CALLE, DE",
+        "Número de Finca": "51",
+        "NOMBRE": "LOPE DE VEGA, CALLE, DE, 51",
+        "Gis_X": "441110,3223",
+        "Gis_Y": "4473933,159",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "12 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694106,
+          40.413937
+        ],
+        "type": "Point"
+      },
+      "id": "dc99074819a1347cd81f95140c38589a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 87,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "SANTA BARBARA, PLAZA, DE",
+        "Número de Finca": "3",
+        "NOMBRE": "SANTA BARBARA, PLAZA, DE, 3",
+        "Gis_X": "440934,4057",
+        "Gis_Y": "4475409,187",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "68.2 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.696317,
+          40.427222
+        ],
+        "type": "Point"
+      },
+      "id": "e2ae53be8701076ded03ab8299915a0c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 75,
+        "Barrio": "01-03 CORTES",
+        "Calle": "CERVANTES, CALLE, DE",
+        "Número de Finca": "44",
+        "NOMBRE": "CERVANTES, CALLE, DE, 44",
+        "Gis_X": "441036,739",
+        "Gis_Y": "4474021,826",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "61 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.694982,
+          40.414731
+        ],
+        "type": "Point"
+      },
+      "id": "e38bf132b0b9bc2d17398543397fbb73"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 5,
+        "Barrio": "01-02 EMBAJADORES",
+        "Calle": "EMBAJADORES, CALLE, DE",
+        "Número de Finca": "S/N",
+        "NOMBRE": "EMBAJADORES, CALLE, DE, S/N",
+        "Gis_X": "440363,6803",
+        "Gis_Y": "4473006,755",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "4 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.702819,
+          40.405539
+        ],
+        "type": "Point"
+      },
+      "id": "e452e53991f16b2f04c51d04c2316367"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 113,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "SAN FRANCISCO, CARRERA, DE",
+        "Número de Finca": "16",
+        "NOMBRE": "SAN FRANCISCO, CARRERA, DE, 16",
+        "Gis_X": "439466,8223",
+        "Gis_Y": "4473592,576",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "88 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.713444,
+          40.410751
+        ],
+        "type": "Point"
+      },
+      "id": "e65e008a395de2ecb5fca327eb9060ac"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 86,
+        "Barrio": "01-04 JUSTICIA",
+        "Calle": "SANTA BARBARA, PLAZA, DE",
+        "Número de Finca": "3",
+        "NOMBRE": "SANTA BARBARA, PLAZA, DE, 3",
+        "Gis_X": "440937,2946",
+        "Gis_Y": "4475407,409",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "68.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.696283,
+          40.427206
+        ],
+        "type": "Point"
+      },
+      "id": "e8b2b159a83dd014b441514097431c87"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 36,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "SANTA CRUZ DE MARCENADO, CALLE, DE",
+        "Número de Finca": "24 B",
+        "NOMBRE": "SANTA CRUZ DE MARCENADO, CALLE, DE, 24 B",
+        "Gis_X": "439563,4057",
+        "Gis_Y": "4475672,243",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "28.2 e",
+        "Distrito": "01  CENTRO",
+        "Código": " Entrada"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712503,
+          40.429493
+        ],
+        "type": "Point"
+      },
+      "id": "eb0088fe057092fd865946d6c9efebf9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 107,
+        "Barrio": "01-01 PALACIO",
+        "Calle": "MAYOR, CALLE",
+        "Número de Finca": "86",
+        "NOMBRE": "MAYOR, CALLE, 86",
+        "Gis_X": "439515,7807",
+        "Gis_Y": "4474081,576",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "83.1 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712913,
+          40.41516
+        ],
+        "type": "Point"
+      },
+      "id": "ef2bb35221846c4210eecc23b98664d0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Cámara": 101,
+        "Barrio": "01-05 UNIVERSIDAD",
+        "Calle": "DUQUE DE LIRIA, CALLE, DEL",
+        "Número de Finca": "6",
+        "NOMBRE": "DUQUE DE LIRIA, CALLE, DEL, 6",
+        "Gis_X": "439551,5307",
+        "Gis_Y": "4475314,951",
+        "Fecha de Alta": 43434,
+        "Nº Cámara": "78 s",
+        "Distrito": "01  CENTRO",
+        "Código": " Salida"
+      },
+      "geometry": {
+        "coordinates": [
+          -3.712609,
+          40.426273
+        ],
+        "type": "Point"
+      },
+      "id": "ff97bdb8eda37d2e035e6e4061d3acdc"
+    }
+  ],
+  "type": "FeatureCollection"
+}

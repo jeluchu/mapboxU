@@ -17,12 +17,21 @@
             mapbox:mapbox_cameraZoom="12.9"
             mapbox:mapbox_styleUrl="@string/mapbox_style_traffic_day"/>
 
+    <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+        <include layout="@layout/toolbar" />
+
+    </android.support.design.widget.AppBarLayout>
+
     <android.support.design.widget.FloatingActionButton
             android:id="@+id/btnNavigate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            android:src="@drawable/ic_navigate"
+            android:src="@drawable/ic_options"
             android:layout_margin="16dp" />
 
          <com.hlab.fabrevealmenu.view.FABRevealMenu

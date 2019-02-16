@@ -2,22 +2,34 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <group android:id="@+id/grp1">
     <item
         android:id="@+id/car"
         android:title="Car"
         android:icon="@drawable/ic_car"
+        app:itemIconTint="@color/colorAccent"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/motorcycle"
         android:title="Motorcycle"
         android:icon="@drawable/ic_motorcycle"
+        app:itemIconTint="@color/colorAccent"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/walking"
         android:title="Walking"
         android:icon="@drawable/ic_walk"
+        app:itemIconTint="@color/colorAccent"
         app:showAsAction="always"/>
+    </group>
+
+    <group android:id="@+id/grp2">
+    <item
+            android:id="@+id/info"
+            android:title="Walking"
+            android:icon="@drawable/ic_info"
+            app:showAsAction="always"/>
+    </group>
 </menu>
