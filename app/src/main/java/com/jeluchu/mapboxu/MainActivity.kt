@@ -61,6 +61,7 @@ import java.net.URL
 import java.nio.charset.Charset
 import java.util.*
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity(),
     PermissionsListener, LocationEngineListener, OnMapReadyCallback, MapboxMap.OnMapClickListener,
     OnFABMenuSelectedListener {
@@ -150,7 +151,7 @@ class MainActivity : AppCompatActivity(),
 
             // TRY TO LOAD LAYER FOR LIMITS
             try{
-                val geoJsonUrl = URL("https://macarteycreacion.com/jeluchu/geojsons/mapi.geojson")
+                val geoJsonUrl = URL(getString(R.string.geosonLimit))
                 val urbanAreasSource = GeoJsonSource("urban-areas", geoJsonUrl)
                 map.addSource(urbanAreasSource)
 
@@ -194,7 +195,7 @@ class MainActivity : AppCompatActivity(),
         if (currentRoute != null) {
             val navigationLauncherOptions = NavigationLauncherOptions.builder()
                 .directionsRoute(currentRoute)
-                .directionsProfile(transport)
+
                 .shouldSimulateRoute(true) //3
                 .build()
 
@@ -219,16 +220,45 @@ class MainActivity : AppCompatActivity(),
 
     /* ------------------------------- SEARCH NAVIGATION -------------------------------- */
     private fun findPlace(){
+
         val intent = PlaceAutocomplete.IntentBuilder()
-            .accessToken(getString(R.string.acces_token))
-            .placeOptions(PlaceOptions.builder()
-                .backgroundColor(Color.parseColor("#EEEEEE"))
-                .limit(10)
-                .hint("Busca un lugar...")
-                .build(PlaceOptions.MODE_FULLSCREEN))
-            .build(this@MainActivity)
-        startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE)
+              .accessToken(getString(R.string.acces_token))
+              .placeOptions(PlaceOptions.builder()
+                  .backgroundColor(Color.parseColor("#EEEEEE"))
+                  .limit(10)
+                  .country("es")
+                  .hint("Busca un lugar...")
+                  .toolbarColor(Color.parseColor("#14C889"))
+                  .build(PlaceOptions.MODE_FULLSCREEN))
+              .build(this@MainActivity)
+          startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE)
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        /*if (requestCode == REQUEST_CHECK_SETTINGS) {
+            if (resultCode == Activity.RESULT_OK) {
+                enableLocation()
+            } else
+                if (resultCode == Activity.RESULT_CANCELED) {
+                    finish()
+                }
+        } */
+
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_AUTOCOMPLETE) {
+
+            enableLocation()
+
+            val feature = PlaceAutocomplete.getPlace(data)
+
+            Toast.makeText(this, feature.id(), Toast.LENGTH_LONG).show()
+
+        } else if (resultCode == Activity.RESULT_CANCELED) {
+            finish()
+        }
+    }
+
 
     /* -------------------------------- DOWNLOAD BUTTON ---------------------------------------- */
     private fun downloadRegionDialog() {
@@ -500,19 +530,6 @@ class MainActivity : AppCompatActivity(),
             getRoute(originPoint!!, endPoint!!)
         return true
     } */
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == REQUEST_CHECK_SETTINGS) {
-            if (resultCode == Activity.RESULT_OK) {
-                enableLocation()
-            } else
-                if (resultCode == Activity.RESULT_CANCELED) {
-                    finish()
-                }
-        }
-    }
 
 
     /* -------------------------------- LIFECYCLE  -----------------------------------------------*/

@@ -12,7 +12,7 @@ android {
     }
     defaultConfig {
         applicationId "com.jeluchu.mapboxu"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -44,7 +44,7 @@ dependencies {
     }
     //noinspection GradleDependency
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.3'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places:0.4.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places:0.6.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-geojson:0.3.0'
 
     // GOOGLE LOCATION SERVICES
@@ -54,7 +54,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
 
     // FAB BUTTON
-    implementation 'com.hlab.fabrevealmenu:fab-reveal-menu:1.0.3'
+    implementation 'com.hlab.fabrevealmenu:fab-reveal-menu:1.0.4'
     implementation('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
         transitive = true
     }

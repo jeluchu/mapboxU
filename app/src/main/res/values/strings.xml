@@ -8,6 +8,9 @@
     <string name="offline">Guardar</string>
     <string name="listado">Listado</string>
 
+    <!-- MAIN ACTIVITY -->
+    <string name="geosonLimit">https://macarteycreacion.com/jeluchu/geojsons/mapi.geojson</string>
+
     <!-- INFO SCREEN -->
     <string name="version">Versión</string>
     <string name="versionNum">1.0-beta03</string>
