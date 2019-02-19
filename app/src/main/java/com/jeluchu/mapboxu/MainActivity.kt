@@ -481,8 +481,6 @@ class MainActivity : AppCompatActivity(),
         menuView.findItem(R.id.motorcycle).setIcon(R.drawable.ic_motorcycle_active)
         menuView.findItem(R.id.walking).setIcon(R.drawable.ic_walk_active)
 
-        val point: LatLng
-
         when (item!!.itemId) {
             R.id.defaultNav -> {
                 transport = PROFILE_DRIVING_TRAFFIC
