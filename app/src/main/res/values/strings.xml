@@ -11,6 +11,13 @@
     <!-- MAIN ACTIVITY -->
     <string name="geosonLimit">https://macarteycreacion.com/jeluchu/geojsons/mapi.geojson</string>
 
+    <!-- FILTER FOR ROUTE -->
+    <string name="defecto">Por defecto</string>
+    <string name="coche">Coche</string>
+    <string name="bicicleta">Bicicleta</string>
+    <string name="caminando">Caminando</string>
+    <string name="info">Información</string>
+
     <!-- INFO SCREEN -->
     <string name="version">Versión</string>
     <string name="versionNum">1.0-beta03</string>
@@ -22,4 +29,5 @@
         cuál puedes guardar rutas sin conexión,
         además de ver el tráfico a tiempo real.
     </string>
+
 </resources>

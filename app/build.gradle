@@ -47,6 +47,20 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places:0.6.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-geojson:0.3.0'
 
+    // RETRIEVE ROUTES FROM MAPBOX DIRECTIONS API
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.5.0'
+
+    // DISTANCE CALCULATION METHODS
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:4.5.0'
+
+    // SHOW 3D BUILDINGS
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building:0.4.0'
+
+    // ADJUST MAP TO DEVICE'S LANGUAGE
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-localization:0.6.0'
+
+
+
     // GOOGLE LOCATION SERVICES
     implementation 'com.google.android.gms:play-services-location:16.0.0'
 

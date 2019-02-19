@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Gravity
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -25,7 +26,7 @@ import com.mapbox.android.core.location.LocationEnginePriority
 import com.mapbox.android.core.location.LocationEngineProvider
 import com.mapbox.android.core.permissions.PermissionsListener
 import com.mapbox.android.core.permissions.PermissionsManager
-import com.mapbox.api.directions.v5.DirectionsCriteria
+import com.mapbox.api.directions.v5.DirectionsCriteria.*
 import com.mapbox.api.directions.v5.models.DirectionsResponse
 import com.mapbox.api.directions.v5.models.DirectionsRoute
 import com.mapbox.geojson.Point
@@ -44,6 +45,7 @@ import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
 import com.mapbox.mapboxsdk.style.layers.FillLayer
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity
+import com.mapbox.mapboxsdk.style.light.Position
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions
@@ -74,16 +76,13 @@ class MainActivity : AppCompatActivity(),
     private lateinit var permissionManager: PermissionsManager
     private var originLocation: Location? = null
 
-    private var originPoint: Point? = null
-    private var endPoint: Point? = null
-
     private var locationEngine: LocationEngine? = null
     private var locationComponent: LocationComponent? = null
 
     var navigationMapRoute: NavigationMapRoute? = null
     var currentRoute: DirectionsRoute? = null
 
-    private var transport = "driving"
+    private var transport: String = PROFILE_DRIVING_TRAFFIC
     private lateinit var menuView: Menu
 
     // Offline Map
@@ -103,41 +102,6 @@ class MainActivity : AppCompatActivity(),
         // TOOLBAR SUPPORT
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "MapboxU"
-
-        // TOOLBAR OPTIONS
-        toolbar.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                    R.id.car -> {
-                        transport = "driving"
-                        item.setIcon(R.drawable.ic_car)
-                        if (originLocation != null && currentRoute != null)
-                            getRoute(originPoint!!, endPoint!!) // ERROR!
-                        else
-                            return@setOnMenuItemClickListener false
-                        return@setOnMenuItemClickListener true
-                    }
-
-                    R.id.motorcycle -> {
-                        transport = "cycling"
-                        item.setIcon(R.drawable.ic_motorcycle)
-                        return@setOnMenuItemClickListener true
-                    }
-
-                    R.id.walking -> {
-                        transport = "walking"
-                        item.setIcon(R.drawable.ic_walk)
-                        return@setOnMenuItemClickListener true
-                    }
-
-                    R.id.info -> {
-                        val info = Intent(this@MainActivity, InfoActivity::class.java)
-                        startActivity(info)
-                        return@setOnMenuItemClickListener true
-
-                    }
-            }
-            false
-        }
 
         mapbox.onCreate(savedInstanceState)
         mapbox.getMapAsync(this)
@@ -192,10 +156,34 @@ class MainActivity : AppCompatActivity(),
     /* -------------------------------- START NAVIGATION -------------------------------- */
     private fun startNavigation() {
 
-        if (currentRoute != null) {
+        if (currentRoute != null && transport == PROFILE_DRIVING_TRAFFIC) {
             val navigationLauncherOptions = NavigationLauncherOptions.builder()
                 .directionsRoute(currentRoute)
+                .directionsProfile(PROFILE_DRIVING_TRAFFIC)
+                .shouldSimulateRoute(true) //3
+                .build()
 
+            NavigationLauncher.startNavigation(this, navigationLauncherOptions)
+        } else if (currentRoute != null && transport == PROFILE_DRIVING) {
+            val navigationLauncherOptions = NavigationLauncherOptions.builder()
+                .directionsRoute(currentRoute)
+                .directionsProfile(PROFILE_DRIVING)
+                .shouldSimulateRoute(true) //3
+                .build()
+
+            NavigationLauncher.startNavigation(this, navigationLauncherOptions)
+        } else if (currentRoute != null && transport == PROFILE_CYCLING) {
+            val navigationLauncherOptions = NavigationLauncherOptions.builder()
+                .directionsRoute(currentRoute)
+                .directionsProfile(PROFILE_CYCLING)
+                .shouldSimulateRoute(true) //3
+                .build()
+
+            NavigationLauncher.startNavigation(this, navigationLauncherOptions)
+        } else if (currentRoute != null && transport == PROFILE_WALKING) {
+            val navigationLauncherOptions = NavigationLauncherOptions.builder()
+                .directionsRoute(currentRoute)
+                .directionsProfile(PROFILE_WALKING)
                 .shouldSimulateRoute(true) //3
                 .build()
 
@@ -237,22 +225,12 @@ class MainActivity : AppCompatActivity(),
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        /*if (requestCode == REQUEST_CHECK_SETTINGS) {
-            if (resultCode == Activity.RESULT_OK) {
-                enableLocation()
-            } else
-                if (resultCode == Activity.RESULT_CANCELED) {
-                    finish()
-                }
-        } */
-
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_AUTOCOMPLETE) {
 
             enableLocation()
 
             val feature = PlaceAutocomplete.getPlace(data)
-
-            Toast.makeText(this, feature.id(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, feature.text(), Toast.LENGTH_LONG).show()
 
         } else if (resultCode == Activity.RESULT_CANCELED) {
             finish()
@@ -497,25 +475,32 @@ class MainActivity : AppCompatActivity(),
         return true
     }
 
-    /*
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        menuView.findItem(R.id.defaultNav).setIcon(R.drawable.ic_trafdef_active)
         menuView.findItem(R.id.car).setIcon(R.drawable.ic_car_active)
         menuView.findItem(R.id.motorcycle).setIcon(R.drawable.ic_motorcycle_active)
         menuView.findItem(R.id.walking).setIcon(R.drawable.ic_walk_active)
 
+        val point: LatLng
+
         when (item!!.itemId) {
+            R.id.defaultNav -> {
+                transport = PROFILE_DRIVING_TRAFFIC
+                item.setIcon(R.drawable.ic_trafdef)
+            }
+
             R.id.car -> {
-                transport = "driving"
+                transport = PROFILE_DRIVING
                 item.setIcon(R.drawable.ic_car)
             }
 
             R.id.motorcycle -> {
-                transport = "cycling"
+                transport = PROFILE_CYCLING
                 item.setIcon(R.drawable.ic_motorcycle)
             }
 
             R.id.walking -> {
-                transport = "walking"
+                transport = PROFILE_WALKING
                 item.setIcon(R.drawable.ic_walk)
             }
 
@@ -525,11 +510,8 @@ class MainActivity : AppCompatActivity(),
 
             }
         }
-
-        if (originPoint != null && endPoint != null)
-            getRoute(originPoint!!, endPoint!!)
         return true
-    } */
+    }
 
 
     /* -------------------------------- LIFECYCLE  -----------------------------------------------*/
@@ -696,6 +678,7 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
+
     @SuppressLint("MissingPermission")
     private fun checkLocation() {
         if (originLocation == null) {
@@ -710,7 +693,39 @@ class MainActivity : AppCompatActivity(),
             .accessToken(Mapbox.getAccessToken()!!) //2
             .origin(originPoint) //3
             .profile(transport)
-            .voiceUnits(DirectionsCriteria.METRIC)
+            .voiceUnits(METRIC)
+            .destination(endPoint) //4
+            .build() //5
+            .getRoute(object : Callback<DirectionsResponse> { //6
+                override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
+                    Timber.d(t.localizedMessage)
+                }
+
+
+                override fun onResponse(call: Call<DirectionsResponse>,
+                                        response: Response<DirectionsResponse>) {
+                    if (navigationMapRoute != null) {
+                        navigationMapRoute?.updateRouteVisibilityTo(false)
+                    } else {
+                        navigationMapRoute = NavigationMapRoute(null, mapbox, map)
+                    }
+
+                    currentRoute = response.body()?.routes()?.first()
+                    if (currentRoute != null) {
+                        navigationMapRoute?.addRoute(currentRoute)
+                    }
+
+                    btnNavigate.isEnabled = true
+                }
+            })
+    }
+
+    private fun getRouteReLoad(originPoint: Point, endPoint: Point, transport: String) {
+        NavigationRoute.builder(this) //1
+            .accessToken(Mapbox.getAccessToken()!!) //2
+            .origin(originPoint) //3
+            .profile(transport)
+            .voiceUnits(METRIC)
             .destination(endPoint) //4
             .build() //5
             .getRoute(object : Callback<DirectionsResponse> { //6
