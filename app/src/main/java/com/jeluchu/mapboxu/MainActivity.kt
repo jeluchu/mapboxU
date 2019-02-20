@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity(),
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         Mapbox.getInstance(this, getString(R.string.acces_token))
         setContentView(R.layout.activity_main)

@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionMenuTextColor">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AppThemeN" parent="Theme.AppCompat.Light.NoActionBar">
@@ -32,6 +34,10 @@
         <item name="navigationViewPrimary">@color/colorWhite</item>
         <item name="navigationViewSecondary">@color/blue_100</item>
         <item name="navigationViewAccent">@color/pink_100</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
 </resources>
