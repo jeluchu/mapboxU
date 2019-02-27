@@ -92,7 +92,6 @@ class MainActivity : AppCompatActivity(),
     private var offlineManager: OfflineManager? = null
     private var offlineRegionDownloaded : OfflineRegion? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
@@ -126,7 +125,7 @@ class MainActivity : AppCompatActivity(),
                     fillOpacity(0.36f)
                 )
 
-                map.addLayerBelow(urbanArea, "cameras")
+                map.addLayer(urbanArea)
             } catch (malformedUrlException: MalformedURLException) {
                 malformedUrlException.printStackTrace()
             }
@@ -586,6 +585,7 @@ class MainActivity : AppCompatActivity(),
         val locationRequestBuilder = LocationSettingsRequest.Builder().addLocationRequest(LocationRequest()
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
         )
+
         //3
         val locationRequest = locationRequestBuilder?.build()
 

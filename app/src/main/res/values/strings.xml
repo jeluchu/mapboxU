@@ -10,6 +10,7 @@
 
     <!-- MAIN ACTIVITY -->
     <string name="geosonLimit">https://macarteycreacion.com/jeluchu/geojsons/mapi.geojson</string>
+    <string name="mapboxstyle_day">mapbox://styles/infojeluchu/cjsnblwka789i1fnyzapkmbmt</string>
 
     <!-- FILTER FOR ROUTE -->
     <string name="defecto">Por defecto</string>
