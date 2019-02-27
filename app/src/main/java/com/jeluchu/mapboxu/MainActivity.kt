@@ -7,7 +7,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.location.Location
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Gravity
 import android.view.Menu
@@ -15,6 +14,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
@@ -45,7 +45,6 @@ import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
 import com.mapbox.mapboxsdk.style.layers.FillLayer
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillColor
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillOpacity
-import com.mapbox.mapboxsdk.style.light.Position
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions
@@ -553,12 +552,6 @@ class MainActivity : AppCompatActivity(),
         mapbox.onLowMemory()
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
-        super.onSaveInstanceState(outState)
-        if (outState != null) {
-            mapbox.onSaveInstanceState(outState)
-        }
-    }
 
     override fun onExplanationNeeded(permissionsToExplain: MutableList<String>?) {
         Toast.makeText(this, "This app needs location permission to be able to show your location on the map", Toast.LENGTH_LONG).show()
@@ -688,38 +681,6 @@ class MainActivity : AppCompatActivity(),
     }
 
     private fun getRoute(originPoint: Point, endPoint: Point) {
-        NavigationRoute.builder(this) //1
-            .accessToken(Mapbox.getAccessToken()!!) //2
-            .origin(originPoint) //3
-            .profile(transport)
-            .voiceUnits(METRIC)
-            .destination(endPoint) //4
-            .build() //5
-            .getRoute(object : Callback<DirectionsResponse> { //6
-                override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
-                    Timber.d(t.localizedMessage)
-                }
-
-
-                override fun onResponse(call: Call<DirectionsResponse>,
-                                        response: Response<DirectionsResponse>) {
-                    if (navigationMapRoute != null) {
-                        navigationMapRoute?.updateRouteVisibilityTo(false)
-                    } else {
-                        navigationMapRoute = NavigationMapRoute(null, mapbox, map)
-                    }
-
-                    currentRoute = response.body()?.routes()?.first()
-                    if (currentRoute != null) {
-                        navigationMapRoute?.addRoute(currentRoute)
-                    }
-
-                    btnNavigate.isEnabled = true
-                }
-            })
-    }
-
-    private fun getRouteReLoad(originPoint: Point, endPoint: Point, transport: String) {
         NavigationRoute.builder(this) //1
             .accessToken(Mapbox.getAccessToken()!!) //2
             .origin(originPoint) //3
