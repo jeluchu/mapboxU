@@ -9,13 +9,12 @@
         tools:context=".MainActivity">
 
     <com.mapbox.mapboxsdk.maps.MapView
-            android:id="@+id/mapbox"
+            android:id="@+id/mapView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             mapbox:mapbox_cameraTargetLat="40.418162"
             mapbox:mapbox_cameraTargetLng="-3.7027782"
-            mapbox:mapbox_cameraZoom="12.9"
-            mapbox:mapbox_styleUrl="@string/mapbox_style_traffic_day"/>
+            mapbox:mapbox_cameraZoom="12.9"/>
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -34,7 +33,7 @@
             android:src="@drawable/ic_options"
             android:layout_margin="16dp" />
 
-         <com.hlab.fabrevealmenu.view.FABRevealMenu
+    <com.hlab.fabrevealmenu.view.FABRevealMenu
             android:id="@+id/btnExtend"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -47,7 +46,7 @@
             app:showOverlay="true"
             app:showTitle="true"
             app:menuSize="normal"
-            app:menuTitleDisabledTextColor="@color/colorAccent"/>
+            app:menuTitleDisabledTextColor="@color/colorPrimaryDark"/>
 
     <ProgressBar
             android:id="@+id/progress_bar"
@@ -61,6 +60,7 @@
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
             android:visibility="gone"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true"
+            tools:ignore="RtlHardcoded"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

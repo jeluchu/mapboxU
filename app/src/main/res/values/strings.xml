@@ -8,9 +8,13 @@
     <string name="offline">Guardar</string>
     <string name="listado">Listado</string>
 
+    <string name="user_location_permission_explanation">Esta app necesita los permisos de localización para poder funcionar correctamente</string>
+    <string name="user_location_permission_not_granted">No has aceptado los permisos de localización</string>
+
+
     <!-- MAIN ACTIVITY -->
-    <string name="geosonLimit">https://macarteycreacion.com/jeluchu/geojsons/mapi.geojson</string>
-    <string name="mapboxstyle_day">mapbox://styles/infojeluchu/cjsnblwka789i1fnyzapkmbmt</string>
+    <string name="geojsonLimit">http://bit.ly/limitemad</string>
+
 
     <!-- FILTER FOR ROUTE -->
     <string name="defecto">Por defecto</string>
@@ -23,7 +27,7 @@
     <string name="version">Versión</string>
     <string name="versionNum">1.0-beta03</string>
     <string name="ultimaActualizacion">Última Actualización</string>
-    <string name="fechaUpdate">16 Febrero 2019</string>
+    <string name="fechaUpdate">03 marzo 2019</string>
     <string name="develop">Desarrollada por Jéluchu</string>
     <string name="descripcion">
         Se trata de un navegador móvil en el
