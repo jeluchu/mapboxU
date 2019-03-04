@@ -1,11 +1,11 @@
 package com.jeluchu.mapboxu
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.location.Location
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -15,24 +15,27 @@ import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import com.hlab.fabrevealmenu.enums.Direction
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener
-import com.mapbox.android.core.location.LocationEngine
 import com.mapbox.android.core.permissions.PermissionsListener
 import com.mapbox.android.core.permissions.PermissionsManager
 import com.mapbox.api.directions.v5.DirectionsCriteria.*
 import com.mapbox.api.directions.v5.models.DirectionsResponse
 import com.mapbox.api.directions.v5.models.DirectionsRoute
+import com.mapbox.api.geocoding.v5.models.CarmenFeature
 import com.mapbox.geojson.Feature
+import com.mapbox.geojson.FeatureCollection
 import com.mapbox.geojson.Point
 import com.mapbox.mapboxsdk.Mapbox
+import com.mapbox.mapboxsdk.camera.CameraPosition
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
 import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.location.LocationComponent
 import com.mapbox.mapboxsdk.location.modes.CameraMode
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
 import com.mapbox.mapboxsdk.maps.Style
-import com.mapbox.mapboxsdk.offline.OfflineManager
-import com.mapbox.mapboxsdk.offline.OfflineRegion
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin
+import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
+import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
 import com.mapbox.mapboxsdk.style.layers.FillLayer
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer
@@ -50,7 +53,7 @@ import timber.log.Timber
 import java.net.MalformedURLException
 import java.net.URL
 
-@Suppress("DEPRECATION")
+@Suppress("DEPRECATION", "PrivatePropertyName")
 class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapClickListener, PermissionsListener,
     OnFABMenuSelectedListener {
 
@@ -68,28 +71,12 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     private var currentRoute: DirectionsRoute? = null
     var navigationMapRoute: NavigationMapRoute? = null
 
-    // --------------------------------------------- DELETE -->
-
-    private val REQUEST_CHECK_SETTINGS = 1
-    private val REQUEST_CODE_AUTOCOMPLETE = 1
-    //private var settingsClient: SettingsClient? = null
-
-    lateinit var map: MapboxMap
-    private lateinit var permissionManager: PermissionsManager
-    private var originLocation: Location? = null
-
-    private var locationEngine: LocationEngine? = null
-
     private var transport: String = PROFILE_DRIVING_TRAFFIC
     private lateinit var menuView: Menu
 
-    // Offline Map
-    // JSON encoding/decoding
-    private val JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME"
-    private var isEndNotified: Boolean = false
-    private var regionSelected: Int = 0
-    private var offlineManager: OfflineManager? = null
-    private var offlineRegionDownloaded : OfflineRegion? = null
+    private val REQUEST_CODE_AUTOCOMPLETE = 1
+
+    private val PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID = "PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -120,7 +107,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     override fun onMenuItemSelected(view: View, id: Int) {
         when (id) {
             R.id.startNavigation -> startNavigation()
-            R.id.searchPlace -> {}
+            R.id.searchPlace -> findPlace()
             R.id.downloadMap -> {}
             R.id.listPlace -> {}
         }
@@ -141,17 +128,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             mapboxMap.uiSettings.isLogoEnabled = false
 
             addDestinationIconSymbolLayer(style)
-
-            /*
-            startButton.setOnClickListener {
-                val simulateRoute = true
-                val options = NavigationLauncherOptions.builder()
-                    .directionsRoute(currentRoute)
-                    .shouldSimulateRoute(simulateRoute)
-                    .build()
-
-                NavigationLauncher.startNavigation(this@MainActivity, options)
-            } */
 
             mapboxMap.addOnMapClickListener(this@MainActivity)
             // Add the marker image to map
@@ -305,6 +281,58 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         }
     }
 
+    /* -------------------------------- SEARCH NAVIGATION -------------------------------- */
+    private fun findPlace() {
+
+        val intent = PlaceAutocomplete.IntentBuilder()
+            .accessToken(getString(R.string.acces_token))
+            .placeOptions(PlaceOptions
+                .builder()
+                .backgroundColor(Color.parseColor("#EEEEEE"))
+                .limit(10)
+                .country("es")
+                .hint("Busca un lugar...")
+                .toolbarColor(Color.parseColor("#FFFFFF"))
+                .build(PlaceOptions.MODE_FULLSCREEN))
+            .build(this)
+        startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE)
+
+    }
+
+
+    @SuppressLint("MissingPermission")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_AUTOCOMPLETE) {
+
+            val feature: CarmenFeature = PlaceAutocomplete.getPlace(data)
+
+            if (mapboxMap!!.style != null) {
+                val source = mapboxMap!!.style!!.getSourceAs<GeoJsonSource>(PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID)
+                source?.setGeoJson(
+                    FeatureCollection.fromFeatures(
+                        arrayOf(Feature.fromJson(feature.toJson()))
+                    )
+                )
+            }
+
+            val newCameraPosition = CameraPosition.Builder()
+                .target(
+                    LatLng(
+                        feature.center()!!.coordinates()[1],
+                        feature.center()!!.coordinates()[0]
+                    )
+                )
+                .zoom(16.0)
+                .build()
+
+            mapboxMap!!.animateCamera(CameraUpdateFactory.newCameraPosition(newCameraPosition), 3000)
+            Toast.makeText(applicationContext, "Pulsa para generar la ruta", Toast.LENGTH_SHORT).show()
+
+        }
+    }
+
+
     /* -------------------------------- TRANSPORT OPTION -------------------------------- */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_transportation, menu!!)
@@ -360,8 +388,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         val source = mapboxMap!!.style!!.getSourceAs<GeoJsonSource>("destination-source-id")
         source?.setGeoJson(Feature.fromGeometry(destinationPoint))
         getRoute(originPoint, destinationPoint)
-        //startButton.isEnabled = true
-        //startButton.setBackgroundResource(R.color.colorPrimary)
+
 
         return true
     }
@@ -394,19 +421,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         mapView.onSaveInstanceState(outState)
-    }
-
-
-
-
-
-    @SuppressLint("MissingPermission")
-    private fun checkLocation() {
-        if (originLocation == null) {
-            map.locationComponent.lastKnownLocation?.run {
-                originLocation = this
-            }
-        }
     }
 
     private fun getRoute(origin: Point, destination: Point) {
