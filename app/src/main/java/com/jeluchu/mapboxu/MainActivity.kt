@@ -7,6 +7,7 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -28,12 +29,20 @@ import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
 import com.mapbox.mapboxsdk.geometry.LatLng
+import com.mapbox.mapboxsdk.geometry.LatLngBounds
 import com.mapbox.mapboxsdk.location.LocationComponent
 import com.mapbox.mapboxsdk.location.modes.CameraMode
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
 import com.mapbox.mapboxsdk.maps.Style
+import com.mapbox.mapboxsdk.offline.*
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin
+import com.mapbox.mapboxsdk.plugins.offline.OfflineRegionSelector
+import com.mapbox.mapboxsdk.plugins.offline.model.NotificationOptions
+import com.mapbox.mapboxsdk.plugins.offline.model.OfflineDownloadOptions
+import com.mapbox.mapboxsdk.plugins.offline.model.RegionSelectionOptions
+import com.mapbox.mapboxsdk.plugins.offline.offline.OfflinePlugin
+import com.mapbox.mapboxsdk.plugins.offline.utils.OfflineUtils
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
 import com.mapbox.mapboxsdk.style.layers.FillLayer
@@ -46,6 +55,7 @@ import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -76,6 +86,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     private val REQUEST_CODE_AUTOCOMPLETE = 1
 
+    val JSON_CHARSET = "UTF-8"
+    val JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME"
+
+    private val TAG = "MapActivity"
+
+    lateinit var metadata: ByteArray
+
+
     private val PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID = "PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID"
 
 
@@ -101,15 +119,23 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             btnExtend.menuDirection = Direction.LEFT
         }
 
+        initFloatButtonOption()
+
     }
 
     /* ------------------------------- FABBUTTON OPTIONS -------------------------------- */
     override fun onMenuItemSelected(view: View, id: Int) {
         when (id) {
-            R.id.startNavigation -> startNavigation()
             R.id.searchPlace -> findPlace()
-            R.id.downloadMap -> {}
+            R.id.downloadMap -> onDownlaodMapClicked()
             R.id.listPlace -> {}
+        }
+    }
+
+    private fun initFloatButtonOption() {
+        val fab: View = findViewById(R.id.btnNavigation)
+        fab.setOnClickListener {
+            startNavigation()
         }
     }
 
@@ -298,8 +324,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE)
 
     }
-
-
     @SuppressLint("MissingPermission")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -332,6 +356,77 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         }
     }
 
+    /* ---------------------------------- DOWNLOAD MAP ----------------------------------- */
+
+    fun onDownlaodMapClicked() {
+
+
+        val offlineManager = OfflineManager.getInstance(this@MainActivity)
+
+        val latLngBounds = LatLngBounds.Builder()
+            .include(LatLng(37.7897, -119.5073)) // Northeast
+            .include(LatLng(37.6744, -119.6815)) // Southwest
+            .build()
+
+        val definition = OfflineTilePyramidRegionDefinition(
+            mapboxMap!!.style.toString(),
+            latLngBounds,
+            10.0,
+            20.0,this@MainActivity.resources.displayMetrics.density)
+
+        try {
+            val jsonObject = JSONObject()
+            jsonObject.put(JSON_FIELD_REGION_NAME, "Yosemite National Park")
+            val json = jsonObject.toString()
+            metadata = json.toByteArray(charset(JSON_CHARSET))
+        } catch (exception: Exception) {
+            Log.e("Error", "Failed to encode metadata: " + exception.message)
+        }
+
+
+        offlineManager.createOfflineRegion(definition, metadata,
+            object : OfflineManager.CreateOfflineRegionCallback {
+                override fun onCreate(offlineRegion: OfflineRegion) {
+                    offlineRegion.setDownloadState(OfflineRegion.STATE_ACTIVE)
+
+                    // Monitor the download progress using setObserver
+                    offlineRegion.setObserver(object : OfflineRegion.OfflineRegionObserver {
+                        override fun onStatusChanged(status: OfflineRegionStatus) {
+
+                            // Calculate the download percentage
+                            val percentage = if (status.requiredResourceCount >= 0)
+                                100.0 * status.completedResourceCount /status.requiredResourceCount else 0.0
+
+                            if (status.isComplete) {
+                                // Download complete
+                                Log.d(TAG, "Region downloaded successfully.")
+                            } else if (status.isRequiredResourceCountPrecise) {
+                                Log.d(TAG, percentage.toString())
+                            }
+                        }
+
+                        override fun onError(error: OfflineRegionError) {
+                            // If an error occurs, print to logcat
+                            Log.e(TAG, "onError reason: " + error.reason)
+                            Log.e(TAG, "onError message: " + error.message)
+                        }
+
+                        override fun mapboxTileCountLimitExceeded(limit: Long) {
+                            // Notify if offline region exceeds maximum tile count
+                            Log.e(TAG, "Mapbox tile count limit exceeded: $limit")
+                        }
+                    })
+                }
+
+                override fun onError(error: String) {
+                    Log.e(TAG, "Error: $error")
+                }
+            })
+
+
+
+
+    }
 
     /* -------------------------------- TRANSPORT OPTION -------------------------------- */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

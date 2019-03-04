@@ -26,12 +26,32 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btnNavigate"
+            android:id="@+id/btnNavigation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
+            android:backgroundTint="@color/colorWhite"
+            mapbox:borderWidth="0dp"
+            android:tint="@color/colorPrimary"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_navigation" />
+
+    <View
+            android:id="@+id/dummy"
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            app:layout_anchor="@id/btnNavigation"
+            app:layout_anchorGravity="top|right|end" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnNavigate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:layout_margin="16dp"
             android:src="@drawable/ic_options"
-            android:layout_margin="16dp" />
+            app:layout_anchor="@id/dummy"
+            app:layout_anchorGravity="top|right|end" />
 
     <com.hlab.fabrevealmenu.view.FABRevealMenu
             android:id="@+id/btnExtend"
