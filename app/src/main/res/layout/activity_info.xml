@@ -3,7 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/colorPrimary"
+              android:background="@color/colorWhite"
               android:fitsSystemWindows="true"
               android:orientation="vertical">
 
@@ -26,15 +26,16 @@
                 android:layout_centerInParent="true"
                 android:layout_margin="@dimen/spacing_xlarge"
                 android:paddingBottom="?attr/actionBarSize"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="@android:color/white"
-                    app:fontFamily="sans-serif-light"
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/productbold"
                     tools:ignore="PrivateResource"/>
 
             <View
@@ -42,7 +43,7 @@
                     android:layout_height="3dp"
                     android:layout_marginBottom="@dimen/spacing_medium"
                     android:layout_marginTop="@dimen/spacing_medium"
-                    android:background="@android:color/white" />
+                    android:background="@color/colorPrimary" />
 
             <View
                     android:layout_width="0dp"
@@ -57,15 +58,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/version"
+                        app:fontFamily="@font/productbold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="@color/overlay_light_40" />
+                        android:textColor="@color/colorPrimary" />
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/versionNum"
+                        app:fontFamily="@font/productregular"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@color/colorPrimary" />
 
             </LinearLayout>
 
@@ -82,15 +85,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ultimaActualizacion"
+                        app:fontFamily="@font/productbold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="@color/overlay_light_40" />
+                        android:textColor="@color/colorPrimary" />
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fechaUpdate"
+                        app:fontFamily="@font/productregular"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@color/colorPrimary" />
 
             </LinearLayout>
 
@@ -102,8 +107,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/descripcion"
+                    app:fontFamily="@font/productregular"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@color/colorPrimary" />
 
             <View
                     android:layout_width="0dp"
@@ -113,8 +119,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/develop"
+                    app:fontFamily="@font/productbold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@color/colorPrimary" />
 
 
         </LinearLayout>

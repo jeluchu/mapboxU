@@ -125,18 +125,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             R.id.searchPlace -> findPlace()
             R.id.downloadMap -> onDownlaodMapClicked()
             R.id.listPlace -> {}
-            R.id.pictureInPicture -> {
-                try {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        enterPictureInPictureMode()
-                    }
-                } catch (exception: Exception) {
-                    Toast.makeText(
-                        this, R.string.no_picture_in_picture_support,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
+            R.id.pictureInPicture -> initPictureInPicture()
         }
     }
 
@@ -160,6 +149,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
             mapboxMap.uiSettings.isAttributionEnabled = false
             mapboxMap.uiSettings.isLogoEnabled = false
+            mapboxMap.uiSettings.isRotateGesturesEnabled = true
+            mapboxMap.uiSettings.isRotateVelocityAnimationEnabled = true
+            mapboxMap.uiSettings.isCompassEnabled = false
 
             addDestinationIconSymbolLayer(style)
 
@@ -438,7 +430,18 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     }
 
     /* ----------------------------- PICTURE IN PICTURE MODE ----------------------------- */
-
+    private fun initPictureInPicture() {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                enterPictureInPictureMode()
+            }
+        } catch (exception: Exception) {
+            Toast.makeText(
+                this, R.string.no_picture_in_picture_support,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
     override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean, newConfig: Configuration?) {
         super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig)
 
@@ -461,30 +464,30 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        menuView.findItem(R.id.defaultNav).setIcon(R.drawable.ic_trafdef_active)
-        menuView.findItem(R.id.car).setIcon(R.drawable.ic_car_active)
-        menuView.findItem(R.id.motorcycle).setIcon(R.drawable.ic_motorcycle_active)
-        menuView.findItem(R.id.walking).setIcon(R.drawable.ic_walk_active)
+        menuView.findItem(R.id.defaultNav).setIcon(R.drawable.ic_trafdef)
+        menuView.findItem(R.id.car).setIcon(R.drawable.ic_car)
+        menuView.findItem(R.id.motorcycle).setIcon(R.drawable.ic_motorcycle)
+        menuView.findItem(R.id.walking).setIcon(R.drawable.ic_walk)
 
         when (item!!.itemId) {
             R.id.defaultNav -> {
                 transport = PROFILE_DRIVING_TRAFFIC
-                item.setIcon(R.drawable.ic_trafdef)
+                item.setIcon(R.drawable.ic_trafdef_active)
             }
 
             R.id.car -> {
                 transport = PROFILE_DRIVING
-                item.setIcon(R.drawable.ic_car)
+                item.setIcon(R.drawable.ic_car_active)
             }
 
             R.id.motorcycle -> {
                 transport = PROFILE_CYCLING
-                item.setIcon(R.drawable.ic_motorcycle)
+                item.setIcon(R.drawable.ic_motorcycle_active)
             }
 
             R.id.walking -> {
                 transport = PROFILE_WALKING
-                item.setIcon(R.drawable.ic_walk)
+                item.setIcon(R.drawable.ic_walk_active)
             }
 
             R.id.info -> {

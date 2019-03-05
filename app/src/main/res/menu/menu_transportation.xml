@@ -6,7 +6,7 @@
         <item
             android:id="@+id/defaultNav"
             android:title="@string/defecto"
-            android:icon="@drawable/ic_trafdef"
+            android:icon="@drawable/ic_trafdef_active"
             app:itemIconTint="@color/colorAccent"
             app:showAsAction="always"
             tools:ignore="AlwaysShowAction"/>
@@ -14,7 +14,7 @@
         <item
             android:id="@+id/car"
             android:title="@string/coche"
-            android:icon="@drawable/ic_car_active"
+            android:icon="@drawable/ic_car"
             app:itemIconTint="@color/colorAccent"
             app:showAsAction="always"
             tools:ignore="AlwaysShowAction"/>
@@ -22,7 +22,7 @@
         <item
             android:id="@+id/motorcycle"
             android:title="@string/bicicleta"
-            android:icon="@drawable/ic_motorcycle_active"
+            android:icon="@drawable/ic_motorcycle"
             app:itemIconTint="@color/colorAccent"
             app:showAsAction="always"
             tools:ignore="AlwaysShowAction"/>
@@ -30,7 +30,7 @@
         <item
             android:id="@+id/walking"
             android:title="@string/caminando"
-            android:icon="@drawable/ic_walk_active"
+            android:icon="@drawable/ic_walk"
             app:itemIconTint="@color/colorAccent"
             app:showAsAction="always"
             tools:ignore="AlwaysShowAction"/>
