@@ -10,6 +10,7 @@
 
     <string name="user_location_permission_explanation">Esta app necesita los permisos de localización para poder funcionar correctamente</string>
     <string name="user_location_permission_not_granted">No has aceptado los permisos de localización</string>
+    <string name="no_picture_in_picture_support">Tu versión no soporta el modo "Imagen en Imagen"</string>
 
 
     <!-- MAIN ACTIVITY -->
@@ -34,5 +35,6 @@
         cuál puedes guardar rutas sin conexión,
         además de ver el tráfico a tiempo real.
     </string>
+    <string name="minimapa">Minimapa</string>
 
 </resources>

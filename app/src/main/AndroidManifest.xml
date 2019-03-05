@@ -20,7 +20,11 @@
 
         </activity>
         <activity android:name=".MainActivity"
-                  android:theme="@style/SplashTheme">
+                  android:theme="@style/SplashTheme"
+                  android:resizeableActivity="true"
+                  android:supportsPictureInPicture="true"
+                  android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+                  tools:targetApi="n">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

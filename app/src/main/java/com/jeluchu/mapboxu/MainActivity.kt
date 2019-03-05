@@ -4,15 +4,17 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.NonNull
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.hlab.fabrevealmenu.enums.Direction
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener
@@ -37,12 +39,6 @@ import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
 import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.offline.*
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin
-import com.mapbox.mapboxsdk.plugins.offline.OfflineRegionSelector
-import com.mapbox.mapboxsdk.plugins.offline.model.NotificationOptions
-import com.mapbox.mapboxsdk.plugins.offline.model.OfflineDownloadOptions
-import com.mapbox.mapboxsdk.plugins.offline.model.RegionSelectionOptions
-import com.mapbox.mapboxsdk.plugins.offline.offline.OfflinePlugin
-import com.mapbox.mapboxsdk.plugins.offline.utils.OfflineUtils
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
 import com.mapbox.mapboxsdk.style.layers.FillLayer
@@ -86,12 +82,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     private val REQUEST_CODE_AUTOCOMPLETE = 1
 
-    val JSON_CHARSET = "UTF-8"
-    val JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME"
+    private val JSON_CHARSET = "UTF-8"
+    private val JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME"
 
-    private val TAG = "MapActivity"
 
-    lateinit var metadata: ByteArray
+    private lateinit var metadata: ByteArray
 
 
     private val PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID = "PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID"
@@ -124,11 +119,24 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     }
 
     /* ------------------------------- FABBUTTON OPTIONS -------------------------------- */
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onMenuItemSelected(view: View, id: Int) {
         when (id) {
             R.id.searchPlace -> findPlace()
             R.id.downloadMap -> onDownlaodMapClicked()
             R.id.listPlace -> {}
+            R.id.pictureInPicture -> {
+                try {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        enterPictureInPictureMode()
+                    }
+                } catch (exception: Exception) {
+                    Toast.makeText(
+                        this, R.string.no_picture_in_picture_support,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
     }
 
@@ -347,6 +355,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
                         feature.center()!!.coordinates()[0]
                     )
                 )
+                .bearing(180.0)
                 .zoom(16.0)
                 .build()
 
@@ -358,7 +367,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     /* ---------------------------------- DOWNLOAD MAP ----------------------------------- */
 
-    fun onDownlaodMapClicked() {
+    private fun onDownlaodMapClicked() {
 
 
         val offlineManager = OfflineManager.getInstance(this@MainActivity)
@@ -380,7 +389,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             val json = jsonObject.toString()
             metadata = json.toByteArray(charset(JSON_CHARSET))
         } catch (exception: Exception) {
-            Log.e("Error", "Failed to encode metadata: " + exception.message)
+            Timber.e("Failed to encode metadata: %s", exception.message)
         }
 
 
@@ -399,27 +408,27 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
                             if (status.isComplete) {
                                 // Download complete
-                                Log.d(TAG, "Region downloaded successfully.")
+                                Timber.d("Region downloaded successfully.")
                             } else if (status.isRequiredResourceCountPrecise) {
-                                Log.d(TAG, percentage.toString())
+                                Timber.d(percentage.toString())
                             }
                         }
 
                         override fun onError(error: OfflineRegionError) {
                             // If an error occurs, print to logcat
-                            Log.e(TAG, "onError reason: " + error.reason)
-                            Log.e(TAG, "onError message: " + error.message)
+                            Timber.e("onError reason: %s", error.reason)
+                            Timber.e("onError message: %s", error.message)
                         }
 
                         override fun mapboxTileCountLimitExceeded(limit: Long) {
                             // Notify if offline region exceeds maximum tile count
-                            Log.e(TAG, "Mapbox tile count limit exceeded: $limit")
+                            Timber.e("Mapbox tile count limit exceeded: $limit")
                         }
                     })
                 }
 
                 override fun onError(error: String) {
-                    Log.e(TAG, "Error: $error")
+                    Timber.e("Error: $error")
                 }
             })
 
@@ -428,7 +437,24 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     }
 
-    /* -------------------------------- TRANSPORT OPTION -------------------------------- */
+    /* ----------------------------- PICTURE IN PICTURE MODE ----------------------------- */
+
+    override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean, newConfig: Configuration?) {
+        super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig)
+
+        btnNavigation.visibility = if (isInPictureInPictureMode) View.GONE else View.VISIBLE
+        btnNavigate.visibility = if (isInPictureInPictureMode) View.GONE else View.VISIBLE
+        btnExtend.visibility = if (isInPictureInPictureMode) View.GONE else View.VISIBLE
+
+        if (isInPictureInPictureMode) {
+            supportActionBar!!.hide()
+        } else {
+            supportActionBar!!.show()
+        }
+
+    }
+
+    /* -------------------------------- TRANSPORT OPTION --------------------------------- */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_transportation, menu!!)
         menuView = menu

@@ -5,18 +5,24 @@
             android:id="@+id/searchPlace"
             android:title="@string/buscar"
             android:icon="@drawable/ic_search"
-            app:showAsAction="ifRoom"/>
+            app:showAsAction="ifRoom|withText"/>
 
     <item
             android:id="@+id/downloadMap"
             android:title="@string/offline"
             android:icon="@drawable/ic_offline"
-            app:showAsAction="always"/>
+            app:showAsAction="ifRoom|withText"/>
 
     <item
             android:id="@+id/listPlace"
             android:title="@string/listado"
             android:icon="@drawable/ic_places"
-            app:showAsAction="always"/>
+            app:showAsAction="ifRoom|withText"/>
+
+    <item
+            android:id="@+id/pictureInPicture"
+            android:title="@string/minimapa"
+            android:icon="@drawable/ic_picture_in_picture"
+            app:showAsAction="ifRoom|withText"/>
 
 </menu>
