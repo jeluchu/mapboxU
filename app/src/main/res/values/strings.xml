@@ -35,5 +35,6 @@
         cuál puedes guardar rutas sin conexión,
         además de ver el tráfico a tiempo real.
     </string>
+    <string name="url_github">https://github.com/Jeluchu/mapboxU</string>
 
 </resources>
