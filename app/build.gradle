@@ -45,15 +45,15 @@ dependencies {
 
     // MAPBOX DEPENDENCIES ------------------------------------------------------------------------
     implementation  'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.11.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.1.2'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.2.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.5.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.30.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.30.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.31.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.31.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:4.5.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building-v7:0.5.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places-v7:0.7.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-localization-v7:0.8.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-offline-v7:0.4.0'        // OFFINE MAPS
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-offline-v7:0.4.0'
 
 
     // RETROFIT

@@ -31,13 +31,11 @@ import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
 import com.mapbox.mapboxsdk.geometry.LatLng
-import com.mapbox.mapboxsdk.geometry.LatLngBounds
 import com.mapbox.mapboxsdk.location.LocationComponent
 import com.mapbox.mapboxsdk.location.modes.CameraMode
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
 import com.mapbox.mapboxsdk.maps.Style
-import com.mapbox.mapboxsdk.offline.*
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
@@ -51,7 +49,6 @@ import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -81,13 +78,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     private lateinit var menuView: Menu
 
     private val REQUEST_CODE_AUTOCOMPLETE = 1
-
-    private val JSON_CHARSET = "UTF-8"
-    private val JSON_FIELD_REGION_NAME = "FIELD_REGION_NAME"
-
-
-    private lateinit var metadata: ByteArray
-
 
     private val PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID = "PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID"
 
@@ -123,7 +113,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     override fun onMenuItemSelected(view: View, id: Int) {
         when (id) {
             R.id.searchPlace -> findPlace()
-            R.id.downloadMap -> onDownlaodMapClicked()
+            R.id.downloadMap -> {}
             R.id.listPlace -> {}
             R.id.pictureInPicture -> initPictureInPicture()
         }
@@ -257,34 +247,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     /* -------------------------------- START NAVIGATION -------------------------------- */
     private fun startNavigation() {
 
-        if (currentRoute != null && transport == PROFILE_DRIVING_TRAFFIC) {
-            val navigationLauncherOptions = NavigationLauncherOptions.builder()
-                .directionsRoute(currentRoute)
-                .directionsProfile(PROFILE_DRIVING_TRAFFIC)
-                .shouldSimulateRoute(true) //3
-                .build()
+        if (currentRoute != null) {
 
-            NavigationLauncher.startNavigation(this, navigationLauncherOptions)
-        } else if (currentRoute != null && transport == PROFILE_DRIVING) {
             val navigationLauncherOptions = NavigationLauncherOptions.builder()
                 .directionsRoute(currentRoute)
-                .directionsProfile(PROFILE_DRIVING)
-                .shouldSimulateRoute(true) //3
-                .build()
-
-            NavigationLauncher.startNavigation(this, navigationLauncherOptions)
-        } else if (currentRoute != null && transport == PROFILE_CYCLING) {
-            val navigationLauncherOptions = NavigationLauncherOptions.builder()
-                .directionsRoute(currentRoute)
-                .directionsProfile(PROFILE_CYCLING)
-                .shouldSimulateRoute(true) //3
-                .build()
-
-            NavigationLauncher.startNavigation(this, navigationLauncherOptions)
-        } else if (currentRoute != null && transport == PROFILE_WALKING) {
-            val navigationLauncherOptions = NavigationLauncherOptions.builder()
-                .directionsRoute(currentRoute)
-                .directionsProfile(PROFILE_WALKING)
                 .shouldSimulateRoute(true) //3
                 .build()
 
@@ -357,77 +323,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         }
     }
 
-    /* ---------------------------------- DOWNLOAD MAP ----------------------------------- */
-
-    private fun onDownlaodMapClicked() {
-
-
-        val offlineManager = OfflineManager.getInstance(this@MainActivity)
-
-        val latLngBounds = LatLngBounds.Builder()
-            .include(LatLng(37.7897, -119.5073)) // Northeast
-            .include(LatLng(37.6744, -119.6815)) // Southwest
-            .build()
-
-        val definition = OfflineTilePyramidRegionDefinition(
-            mapboxMap!!.style.toString(),
-            latLngBounds,
-            10.0,
-            20.0,this@MainActivity.resources.displayMetrics.density)
-
-        try {
-            val jsonObject = JSONObject()
-            jsonObject.put(JSON_FIELD_REGION_NAME, "Yosemite National Park")
-            val json = jsonObject.toString()
-            metadata = json.toByteArray(charset(JSON_CHARSET))
-        } catch (exception: Exception) {
-            Timber.e("Failed to encode metadata: %s", exception.message)
-        }
-
-
-        offlineManager.createOfflineRegion(definition, metadata,
-            object : OfflineManager.CreateOfflineRegionCallback {
-                override fun onCreate(offlineRegion: OfflineRegion) {
-                    offlineRegion.setDownloadState(OfflineRegion.STATE_ACTIVE)
-
-                    // Monitor the download progress using setObserver
-                    offlineRegion.setObserver(object : OfflineRegion.OfflineRegionObserver {
-                        override fun onStatusChanged(status: OfflineRegionStatus) {
-
-                            // Calculate the download percentage
-                            val percentage = if (status.requiredResourceCount >= 0)
-                                100.0 * status.completedResourceCount /status.requiredResourceCount else 0.0
-
-                            if (status.isComplete) {
-                                // Download complete
-                                Timber.d("Region downloaded successfully.")
-                            } else if (status.isRequiredResourceCountPrecise) {
-                                Timber.d(percentage.toString())
-                            }
-                        }
-
-                        override fun onError(error: OfflineRegionError) {
-                            // If an error occurs, print to logcat
-                            Timber.e("onError reason: %s", error.reason)
-                            Timber.e("onError message: %s", error.message)
-                        }
-
-                        override fun mapboxTileCountLimitExceeded(limit: Long) {
-                            // Notify if offline region exceeds maximum tile count
-                            Timber.e("Mapbox tile count limit exceeded: $limit")
-                        }
-                    })
-                }
-
-                override fun onError(error: String) {
-                    Timber.e("Error: $error")
-                }
-            })
-
-
-
-
-    }
 
     /* ----------------------------- PICTURE IN PICTURE MODE ----------------------------- */
     private fun initPictureInPicture() {
@@ -456,6 +351,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         }
 
     }
+
 
     /* -------------------------------- TRANSPORT OPTION --------------------------------- */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -497,6 +393,45 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             }
         }
         return true
+    }
+
+    private fun getRoute(origin: Point, destination: Point) {
+        NavigationRoute.builder(this)
+            .accessToken(Mapbox.getAccessToken()!!)
+            .origin(origin)
+            .profile(transport)
+            .destination(destination)
+            .build()
+            .getRoute(object : Callback<DirectionsResponse> {
+                override fun onResponse(call: Call<DirectionsResponse>, response: Response<DirectionsResponse>) {
+                    // You can get the generic HTTP info about the response
+                    Timber.d("Response code: %s", response.code())
+                    if (response.body() == null) {
+                        Timber.e("No routes found, make sure you set the right user and access token.")
+                        return
+                    } else if (response.body()!!.routes().size < 1) {
+                        Timber.e("No routes found")
+                        return
+                    }
+
+                    currentRoute = response.body()!!.routes()[0]
+
+                    // Draw the route on the map
+                    if (navigationMapRoute != null) {
+                        navigationMapRoute!!.removeRoute()
+                    } else {
+                        navigationMapRoute = mapboxMap?.let {
+                            NavigationMapRoute(null, mapView,
+                                it, R.style.NavigationMapRoute)
+                        }
+                    }
+                    navigationMapRoute!!.addRoute(currentRoute)
+                }
+
+                override fun onFailure(call: Call<DirectionsResponse>, throwable: Throwable) {
+                    Timber.e("Error: %s", throwable.message)
+                }
+            })
     }
 
     /* -------------------------------- ON MAP CLICK ------------------------------------ */
@@ -547,42 +482,4 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         mapView.onSaveInstanceState(outState)
     }
 
-    private fun getRoute(origin: Point, destination: Point) {
-        NavigationRoute.builder(this)
-            .accessToken(Mapbox.getAccessToken()!!)
-            .origin(origin)
-            .profile(transport)
-            .destination(destination)
-            .build()
-            .getRoute(object : Callback<DirectionsResponse> {
-                override fun onResponse(call: Call<DirectionsResponse>, response: Response<DirectionsResponse>) {
-                    // You can get the generic HTTP info about the response
-                    Timber.d("Response code: %s", response.code())
-                    if (response.body() == null) {
-                        Timber.e("No routes found, make sure you set the right user and access token.")
-                        return
-                    } else if (response.body()!!.routes().size < 1) {
-                        Timber.e("No routes found")
-                        return
-                    }
-
-                    currentRoute = response.body()!!.routes()[0]
-
-                    // Draw the route on the map
-                    if (navigationMapRoute != null) {
-                        navigationMapRoute!!.removeRoute()
-                    } else {
-                        navigationMapRoute = mapboxMap?.let {
-                            NavigationMapRoute(null, mapView,
-                                it, R.style.NavigationMapRoute)
-                        }
-                    }
-                    navigationMapRoute!!.addRoute(currentRoute)
-                }
-
-                override fun onFailure(call: Call<DirectionsResponse>, throwable: Throwable) {
-                    Timber.e("Error: %s", throwable.message)
-                }
-            })
-    }
 }
