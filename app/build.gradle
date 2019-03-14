@@ -12,7 +12,7 @@ android {
     }
     defaultConfig {
         applicationId "com.jeluchu.mapboxu"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -54,7 +54,6 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places-v7:0.7.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-localization-v7:0.8.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-offline-v7:0.4.0'
-
 
     // RETROFIT
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
