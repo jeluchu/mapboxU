@@ -45,7 +45,7 @@ dependencies {
 
     // MAPBOX DEPENDENCIES ------------------------------------------------------------------------
     implementation  'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.11.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.2.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:4.5.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.33.2'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.33.2'
@@ -56,10 +56,10 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-offline-v7:0.4.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-markerview-v7:0.2.0'
 
-    // RETROFIT
+    // RETROFIT ------------------------------------------------------------------------------------
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
 
-    // FAB BUTTON
+    // FAB BUTTON ----------------------------------------------------------------------------------
     implementation 'com.hlab.fabrevealmenu:fab-reveal-menu:1.0.4'
     implementation 'com.github.ozodrukh:CircularReveal:2.0.1'
 

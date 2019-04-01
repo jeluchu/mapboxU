@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
@@ -12,10 +13,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.scale
 import com.hlab.fabrevealmenu.enums.Direction
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener
 import com.mapbox.android.core.permissions.PermissionsListener
@@ -39,6 +42,9 @@ import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
+import com.mapbox.mapboxsdk.style.expressions.Expression.eq
+import com.mapbox.mapboxsdk.style.expressions.Expression.literal
+import com.mapbox.mapboxsdk.style.layers.CircleLayer
 import com.mapbox.mapboxsdk.style.layers.FillLayer
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer
@@ -53,8 +59,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import timber.log.Timber
+import java.io.IOException
 import java.net.MalformedURLException
 import java.net.URL
+import java.nio.charset.Charset
 
 @Suppress("DEPRECATION", "PrivatePropertyName")
 class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapClickListener, PermissionsListener,
@@ -148,19 +156,64 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
             mapboxMap.addOnMapClickListener(this@MainActivity)
 
-            style.addImage(
-                "marker-icon-id",
-                BitmapFactory.decodeResource(
-                    this@MainActivity.resources, R.drawable.mapbox_marker_icon_default
+            /*val geoJsonSource = GeoJsonSource(
+                "source-id", Feature.fromJson(
+                    Point.fromLngLat(-3.7111951, 40.4074126).toString()
+
                 )
             )
+            style.addSource(geoJsonSource)
+
+            val btm = BitmapFactory.decodeResource(this@MainActivity.resources, R.drawable.security_camera).scale(60, 60)
+            style.addImage("camera_id", btm)
 
             val symbolLayer = SymbolLayer("layer-id", "source-id")
             symbolLayer.withProperties(
-                PropertyFactory.iconImage("marker-icon-id")
+                PropertyFactory.iconImage("camera_id")
             )
-            style.addLayer(symbolLayer)
+            style.addLayer(symbolLayer) */
+
+            cameraGeoJsonSource(style)
+            addPointsLayer(style)
         }
+    }
+
+    private fun cameraGeoJsonSource(loadedMapStyle: Style) {
+        // Load data from GeoJSON file in the assets folder
+        loadedMapStyle.addSource(
+            GeoJsonSource(
+                "layer-id", loadJsonFromAsset("cameras.geojson")
+            )
+        )
+    }
+
+    private fun loadJsonFromAsset(filename: String): String? {
+        return try {
+            val `is` = assets.open(filename)
+            val size = `is`.available()
+            val buffer = ByteArray(size)
+            `is`.read(buffer)
+            `is`.close()
+            String(buffer, Charset.defaultCharset())
+
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            null
+        }
+
+    }
+
+    private fun addPointsLayer(loadedMapStyle: Style) {
+
+        val btm = BitmapFactory.decodeResource(this@MainActivity.resources, R.drawable.security_camera).scale(60, 60)
+        loadedMapStyle.addImage("camera_id", btm)
+
+        val symbolLayer = SymbolLayer("cameras", "layer-id")
+        symbolLayer.withProperties(
+            PropertyFactory.iconImage("camera_id")
+        )
+        loadedMapStyle.addLayer(symbolLayer)
+
     }
 
     /* ----------------------------------- PLUGINS -------------------------------------- */
