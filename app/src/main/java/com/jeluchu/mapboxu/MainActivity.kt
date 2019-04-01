@@ -73,12 +73,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     // CALCULATE ROUTE
     private var currentRoute: DirectionsRoute? = null
     var navigationMapRoute: NavigationMapRoute? = null
-
     private var transport: String = PROFILE_DRIVING_TRAFFIC
+
+    // MENU
     private lateinit var menuView: Menu
 
+    // OTHER DATA
     private val REQUEST_CODE_AUTOCOMPLETE = 1
-
     private val PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID = "PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID"
 
 
@@ -146,20 +147,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             addDestinationIconSymbolLayer(style)
 
             mapboxMap.addOnMapClickListener(this@MainActivity)
-            // Add the marker image to map
+
             style.addImage(
                 "marker-icon-id",
                 BitmapFactory.decodeResource(
                     this@MainActivity.resources, R.drawable.mapbox_marker_icon_default
                 )
             )
-
-            val geoJsonSource = GeoJsonSource(
-                "source-id", Feature.fromGeometry(
-                    Point.fromLngLat(-87.679, 41.885)
-                )
-            )
-            style.addSource(geoJsonSource)
 
             val symbolLayer = SymbolLayer("layer-id", "source-id")
             symbolLayer.withProperties(
@@ -251,7 +245,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
             val navigationLauncherOptions = NavigationLauncherOptions.builder()
                 .directionsRoute(currentRoute)
-                .shouldSimulateRoute(true) //3
+                .shouldSimulateRoute(true) // ROUTE SIMULATION
                 .build()
 
             NavigationLauncher.startNavigation(this, navigationLauncherOptions)
