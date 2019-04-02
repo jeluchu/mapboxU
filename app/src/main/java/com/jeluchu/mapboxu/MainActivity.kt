@@ -5,7 +5,6 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.res.Configuration
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
@@ -13,7 +12,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
@@ -42,12 +40,10 @@ import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
-import com.mapbox.mapboxsdk.style.expressions.Expression.eq
-import com.mapbox.mapboxsdk.style.expressions.Expression.literal
-import com.mapbox.mapboxsdk.style.layers.CircleLayer
-import com.mapbox.mapboxsdk.style.layers.FillLayer
-import com.mapbox.mapboxsdk.style.layers.PropertyFactory
-import com.mapbox.mapboxsdk.style.layers.SymbolLayer
+import com.mapbox.mapboxsdk.style.layers.*
+import com.mapbox.mapboxsdk.style.layers.Property.NONE
+import com.mapbox.mapboxsdk.style.layers.Property.VISIBLE
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory.visibility
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions
@@ -90,6 +86,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
     private val REQUEST_CODE_AUTOCOMPLETE = 1
     private val PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID = "PLACES_PLUGIN_SEARCH_RESULT_SOURCE_ID"
 
+    // FILTER
+    private val listItems = arrayOf("Cámaras", "BiciMad", "Parking")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -124,6 +122,48 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             R.id.searchPlace -> findPlace()
             R.id.downloadMap -> {}
             R.id.listPlace -> {}
+            R.id.filterLayer -> {
+                val builder = AlertDialog.Builder(this@MainActivity)
+                builder.setTitle("Choose item")
+                val checkedItem = 0 //this will checked the item when user open the dialog
+
+                val individualCamerasLayer: Layer = mapboxMap!!.style!!.getLayer("cameras")!!
+                val individualBiciMadLayer: Layer = mapboxMap!!.style!!.getLayer("bici")!!
+
+
+                builder.setSingleChoiceItems(listItems, checkedItem) { _, which ->
+
+                    when (which) {
+                        0 ->
+                        {
+                            individualCamerasLayer.setProperties(
+                                visibility(VISIBLE)
+                            )
+                            individualBiciMadLayer.setProperties(
+                                visibility(NONE)
+                            )
+                        }
+                        1 ->
+                        {
+
+                            individualCamerasLayer.setProperties(
+                                visibility(NONE)
+                            )
+                            individualBiciMadLayer.setProperties(
+                                visibility(VISIBLE)
+                            )
+
+                        }
+                        2 -> { }
+                    }
+
+                }
+                builder.setPositiveButton("Done") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
             R.id.pictureInPicture -> initPictureInPicture()
         }
     }
@@ -156,37 +196,16 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
             mapboxMap.addOnMapClickListener(this@MainActivity)
 
-            /*val geoJsonSource = GeoJsonSource(
-                "source-id", Feature.fromJson(
-                    Point.fromLngLat(-3.7111951, 40.4074126).toString()
-
-                )
-            )
-            style.addSource(geoJsonSource)
-
-            val btm = BitmapFactory.decodeResource(this@MainActivity.resources, R.drawable.security_camera).scale(60, 60)
-            style.addImage("camera_id", btm)
-
-            val symbolLayer = SymbolLayer("layer-id", "source-id")
-            symbolLayer.withProperties(
-                PropertyFactory.iconImage("camera_id")
-            )
-            style.addLayer(symbolLayer) */
-
+            // LAYERS
             cameraGeoJsonSource(style)
-            addPointsLayer(style)
+            addCameraPointsLayer(style)
+
+            biciMadGeoJsonSource(style)
+            addbiciMadPointsLayer(style)
         }
     }
 
-    private fun cameraGeoJsonSource(loadedMapStyle: Style) {
-        // Load data from GeoJSON file in the assets folder
-        loadedMapStyle.addSource(
-            GeoJsonSource(
-                "layer-id", loadJsonFromAsset("cameras.geojson")
-            )
-        )
-    }
-
+    /* ------------------------ LOAD JSON FROM ASSETS ----------------------------------- */
     private fun loadJsonFromAsset(filename: String): String? {
         return try {
             val `is` = assets.open(filename)
@@ -203,7 +222,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     }
 
-    private fun addPointsLayer(loadedMapStyle: Style) {
+    // CAMERA LAYER
+    private fun cameraGeoJsonSource(loadedMapStyle: Style) {
+        // Load data from GeoJSON file in the assets folder
+        loadedMapStyle.addSource(
+            GeoJsonSource(
+                "layer-id", loadJsonFromAsset("cameras.geojson")
+            )
+        )
+    }
+
+    private fun addCameraPointsLayer(loadedMapStyle: Style) {
 
         val btm = BitmapFactory.decodeResource(this@MainActivity.resources, R.drawable.security_camera).scale(60, 60)
         loadedMapStyle.addImage("camera_id", btm)
@@ -213,6 +242,32 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             PropertyFactory.iconImage("camera_id")
         )
         loadedMapStyle.addLayer(symbolLayer)
+
+    }
+
+    // BICIMAD LAYER
+    private fun biciMadGeoJsonSource(loadedMapStyle: Style) {
+        // Load data from GeoJSON file in the assets folder
+        loadedMapStyle.addSource(
+            GeoJsonSource(
+                "layer-bici-id", loadJsonFromAsset("bicimad.geojson")
+            )
+        )
+    }
+
+    private fun addbiciMadPointsLayer(loadedMapStyle: Style) {
+
+        val btm = BitmapFactory.decodeResource(this@MainActivity.resources, R.drawable.bikemad).scale(60, 60)
+        loadedMapStyle.addImage("bici_id", btm)
+
+        val symbolBiciLayer = SymbolLayer("bici", "layer-bici-id")
+        symbolBiciLayer.withProperties(
+            PropertyFactory.iconImage("bici_id")
+        )
+        symbolBiciLayer.setProperties(
+            visibility(NONE)
+        )
+        loadedMapStyle.addLayer(symbolBiciLayer)
 
     }
 

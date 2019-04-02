@@ -36,5 +36,8 @@
         además de ver el tráfico a tiempo real.
     </string>
     <string name="url_github">https://github.com/Jeluchu/mapboxU</string>
+    <string name="filtrado">Filtrado</string>
+
+    <string name="cero">0</string>
 
 </resources>
