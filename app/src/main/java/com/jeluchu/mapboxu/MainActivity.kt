@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             R.id.filterLayer -> {
                 val builder = AlertDialog.Builder(this@MainActivity)
                 builder.setTitle("Choose item")
-                val checkedItem = 0 //this will checked the item when user open the dialog
+                val checkedItem = 0//this will checked the item when user open the dialog
 
                 val individualCamerasLayer: Layer = mapboxMap!!.style!!.getLayer("cameras")!!
                 val individualBiciMadLayer: Layer = mapboxMap!!.style!!.getLayer("bici")!!
@@ -257,7 +257,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     private fun addbiciMadPointsLayer(loadedMapStyle: Style) {
 
-        val btm = BitmapFactory.decodeResource(this@MainActivity.resources, R.drawable.bikemad).scale(60, 60)
+        val btm = BitmapFactory.decodeResource(this@MainActivity.resources, R.drawable.bike_madrid).scale(60, 60)
         loadedMapStyle.addImage("bici_id", btm)
 
         val symbolBiciLayer = SymbolLayer("bici", "layer-bici-id")
