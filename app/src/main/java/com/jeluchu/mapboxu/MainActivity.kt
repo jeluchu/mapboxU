@@ -1,5 +1,6 @@
 package com.jeluchu.mapboxu
 
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
@@ -45,7 +46,7 @@ import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
 import com.mapbox.mapboxsdk.style.layers.*
 import com.mapbox.mapboxsdk.style.layers.Property.NONE
 import com.mapbox.mapboxsdk.style.layers.Property.VISIBLE
-import com.mapbox.mapboxsdk.style.layers.PropertyFactory.visibility
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory.*
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions
@@ -90,6 +91,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     // FILTER
     private val listItems = arrayOf("Cámaras", "BiciMad", "Parking")
+    private val MOPED_FILTER_ICON_ANIMATION_SPEED: Long = 300
+    private var filterSelected = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -225,6 +229,19 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
     }
 
+    private fun increaseIconSize(symbolLayer: SymbolLayer) {
+        val symbolLayerIconAnimator = ValueAnimator()
+        symbolLayerIconAnimator.setObjectValues(1f, 1.4f)
+        symbolLayerIconAnimator.duration = MOPED_FILTER_ICON_ANIMATION_SPEED
+        symbolLayerIconAnimator.addUpdateListener { animator ->
+            symbolLayer.setProperties(
+                iconSize(animator.animatedValue as Float)
+            )
+        }
+        symbolLayerIconAnimator.start()
+        filterSelected = true
+    }
+
     // CAMERA LAYER
     private fun cameraGeoJsonSource(loadedMapStyle: Style) {
         // Load data from GeoJSON file in the assets folder
@@ -245,6 +262,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             PropertyFactory.iconImage("camera_id")
         )
         loadedMapStyle.addLayer(symbolLayer)
+        increaseIconSize(symbolLayer)
 
     }
 
