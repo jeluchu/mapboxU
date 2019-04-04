@@ -33,11 +33,13 @@ import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
 import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.location.LocationComponent
+import com.mapbox.mapboxsdk.location.LocationComponentOptions
 import com.mapbox.mapboxsdk.location.modes.CameraMode
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback
 import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin
+import com.mapbox.mapboxsdk.plugins.localization.LocalizationPlugin
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions
 import com.mapbox.mapboxsdk.style.layers.*
@@ -182,7 +184,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
 
             enableLocationComponent(style)
 
-            initBuildingPlugin(style)
+            initBuildingPlugin(style) // 3D BUILDING
+            enableLocalizationPlugin(style) // LANGUAGE MAP
 
             addLimitCentral(style)
 
@@ -277,6 +280,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
         buildingPlugin!!.setVisibility(true)
     }
 
+    private fun enableLocalizationPlugin(loadedMapStyle: Style) {
+        val localizationPlugin = mapboxMap?.let { LocalizationPlugin(mapView, it, loadedMapStyle) }
+        localizationPlugin!!.matchMapLanguageWithDeviceDefault()
+    }
+
     /* ----------------------------------- GEOJSON -------------------------------------- */
     private fun addLimitCentral(loadedMapStyle: Style) {
 
@@ -326,6 +334,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, MapboxMap.OnMapCli
             locationComponent!!.isLocationComponentEnabled = true
             // Set the component's camera mode
             locationComponent!!.cameraMode = CameraMode.TRACKING
+
+            val locationComponentOptions: LocationComponentOptions =
+                LocationComponentOptions.builder(applicationContext)
+                    .foregroundDrawable(R.drawable.ic_compass_location)
+                    .build()
+
+            locationComponent!!.activateLocationComponent(applicationContext, loadedMapStyle, locationComponentOptions)
+
         } else {
             permissionsManager = PermissionsManager(this)
             permissionsManager!!.requestLocationPermissions(this)
